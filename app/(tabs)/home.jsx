@@ -1,16 +1,22 @@
-import { View, Text } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import Search from '../../components/Search'
-import HugeList from '../../components/HugeList'
+import { View, ScrollView, Text ,Image} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import Search from '../../components/Search';
+import HugeList from '../../components/HugeList';
+import Banner from '../../components/Banner';
+import Navbar from '../../components/Navbar';
+
 const Home = () => {
   return (
-    <SafeAreaView className='bg-black-100 font-pmedium h-[100%]'>
-      <Text className="text-xl mt-5 ml-3 font-pmedium text-blue-400">Hello Kartik,</Text>
-      <Text className="text-sm ml-3 font-pregular text-yellow-400">May You Have A Nice Day</Text>
+    <SafeAreaView className="bg-black-100 flex-1 font-pmedium">
+     <Navbar/>
       <Search />
-      <HugeList/>
+      <ScrollView>
+        <HugeList title="Try our Latest collection!" buttonText="Buy Now" />
+        <Banner />
+        <HugeList title="Some Popular Products" buttonText="Explore" />
+      </ScrollView>
     </SafeAreaView>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

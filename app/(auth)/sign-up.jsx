@@ -53,7 +53,7 @@ const SignUp = () => {
             value={form.username}
             handleChangeText={(e) => setFormValue({ ...form, username: e })}
             otherStyle="mt-7"
-            keyboardType=""
+            keyboardType="default"
           />
 
 

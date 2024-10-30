@@ -1,6 +1,7 @@
-import { FlatList, StyleSheet, View, Text, Image } from "react-native";
+import { FlatList, TouchableOpacity, View, Text, Image } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-const HugeList = () => {
+const HugeList = ({title,buttonText}) => {
   const products = [
     {
       image: "https://picsum.photos/200/300?random=1",
@@ -305,65 +306,36 @@ const HugeList = () => {
   ];
 
   const renderItem = ({ item }) => (
-    <View style={styles.productContainer}>
-      <Image source={{ uri: item.image }} style={styles.image}/>
+    <TouchableOpacity className="flex flex-row justify-center items-center">
+    <View className="flex flex-col px-2 py-2 ml-3 justify-start bg-blue-500 h-[22vh] w-[28vw] rounded-lg">
+      <Image source={{ uri: item.image }} className="w-full h-[70px] rounded-md" />
       <View className="flex flex-row items-center">
-      <Text className="text-2xl text-white font-psemibold text-bold my-2">{item.name}</Text>
+        <Text className="text-[13px] text-white font-psemibold text-start text-bold mt-1">{item.name}</Text>
       </View>
-      <View className="flex flex-row justify-between">
-      <Text className="text-base font-pregular">Rating: {item.rating}</Text>
-      <Text className="text-base font-pregular">Price: ${item.price}</Text>
-     
+      <View className="flex flex-col text-white justify-start">
+        <Text className="text-[12px] text-white font-pregular">{item.rating} ⭐</Text>
+        <Text className="text-[10px] text-white font-pregular pb-1">₹ {item.price}</Text>
+
       </View>
-      <Text className="text-base font-pmedium">Buy Now</Text>
+      <Text className="text-[10px] text-center font-pmedium bg-yellow-300 w-[70%] rounded-xl">{buttonText}</Text>
+
     </View>
+    </TouchableOpacity>
   );
 
   return (
+    <View className="flex flex-col">
+    <Text className="text-[16px] text-white text-start capitalize mx-3 my-2 font-psemibold text-bold">{title}</Text>
     <FlatList
       data={products}
       renderItem={renderItem}
       keyExtractor={(item, index) => index.toString()}
+      horizontal
+      showsHorizontalScrollIndicator={false}
     />
+    </View>
   );
 };
 
-const styles = StyleSheet.create({
-  productContainer: {
-    flex: 1,
-    padding: 20,
-    marginBottom:5,
-    marginTop:15,
-    backgroundColor: "#4169e1",
-    borderRadius: 10,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 5,
-    marginHorizontal:10,
-    elevation: 5,
-  },
-  image: {
-    width: '100%',
-    height: 150,
-    borderRadius: 15,
-  },
-  name: {
-    fontSize: 25,
-    color:'white',
-    fontWeight: "bold",
-    marginTop: 10,
-  },
-  rating: {
-    fontSize: 16,
-    color: "#888",
-    marginTop: 5,
-  },
-  price: {
-    fontSize: 16,
-    color: "#000",
-    marginTop: 5,
-  },
-});
 
 export default HugeList;

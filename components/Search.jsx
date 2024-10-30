@@ -10,9 +10,9 @@ const Search = () => {
             placeholder="Search"
             name="search"
             type="text"
-            otherStyles="w-[82vw] flex mb-2"
+            otherStyles="w-[82vw] flex mb-2 rounded-full"
             />
-<Image source={images.search} className="w-[40px] h-[40px] mt-10" resizeMode='contain'/>
+<Image source={images.search} className="w-[30px] h-[30px] mt-10" resizeMode='contain'/>
     </View>
   )
 }
