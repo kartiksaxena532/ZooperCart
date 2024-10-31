@@ -4,6 +4,7 @@ import Search from '../../components/Search';
 import HugeList from '../../components/HugeList';
 import Banner from '../../components/Banner';
 import Navbar from '../../components/Navbar';
+import HugeListSmall from '../../components/HugeListSmall';
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
         <HugeList title="Try our Latest collection!" buttonText="Buy Now" />
         <Banner />
         <HugeList title="Some Popular Products" buttonText="Explore" />
+        <HugeListSmall title="Choose From Our Featured Categories" />
       </ScrollView>
     </SafeAreaView>
   );

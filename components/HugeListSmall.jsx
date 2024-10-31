@@ -1,7 +1,7 @@
 import { FlatList, TouchableOpacity, View, Text, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const HugeList = ({title,buttonText}) => {
+const HugeListSmall = ({title}) => {
   const products = [
     {
       image: "https://picsum.photos/200/300?random=1",
@@ -307,30 +307,21 @@ const HugeList = ({title,buttonText}) => {
 
   const renderItem = ({ item }) => (
     <TouchableOpacity className="flex flex-row justify-center items-center">
-      <View className="absolute top-2 left-4 z-10 w-[8vw] h-[4vh] bg-orange-500 rounded-md">
-        <Text className="text-white text-start px-1 font-psemibold text-[10px]">{Math.floor(Math.random()*100)}% Off</Text>
+        
+    <View className="flex flex-col py-2 ml-3 justify-start bg-transparent h-[15vh] w-[20vw] rounded-lg">
+        <View className="shadow-md border-[0.5px] border-white shadow-yellow-600 rounded-full">
+      <Image source={{ uri: item.image }} className="w-full h-[60px] rounded-full ring-2 ring-slate-500" />
       </View>
-    <View className="flex flex-col px-2 py-2 ml-3 justify-start bg-transparent ring-1 ring-slate-500 h-[22vh] w-[28vw] rounded-lg">
-    <View className="shadow-md shadow-white border-[0.5px] border-white rounded-md">
-      <Image source={{ uri: item.image }} className="w-full h-[70px] rounded-md" />
+      <View className="flex flex-row justify-center">
+        <Text className="text-[11px] text-white font-psemibold text-center text-bold mt-1">{item.name}</Text>
       </View>
-      <View className="flex flex-row items-center">
-        <Text className="text-[13px] text-white font-psemibold text-start text-bold mt-1">{item.name}</Text>
-      </View>
-      <View className="flex flex-col text-white justify-start">
-        <Text className="text-[12px] text-white font-pregular">{item.rating} ⭐</Text>
-        <Text className="text-[10px] text-white font-pregular pb-1">₹ {item.price}</Text>
-
-      </View>
-      <Text className="text-[10px] text-center font-pmedium bg-yellow-300 w-[70%] rounded-xl">{buttonText}</Text>
-
     </View>
     </TouchableOpacity>
   );
 
   return (
     <View className="flex flex-col">
-    <Text className="text-[16px] text-white text-start capitalize mx-3 my-2 font-psemibold text-bold">{title}</Text>
+    <Text className="text-[15px] text-white text-start capitalize mx-3 my-2 font-psemibold text-bold">{title}</Text>
     <FlatList
       data={products}
       renderItem={renderItem}
@@ -343,4 +334,4 @@ const HugeList = ({title,buttonText}) => {
 };
 
 
-export default HugeList;
+export default HugeListSmall;
