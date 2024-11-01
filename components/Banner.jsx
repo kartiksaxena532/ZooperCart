@@ -4,7 +4,7 @@ import Swiper from "react-native-swiper";
 
 const bannerData = [
   {
-    image: "https://picsum.photos/600/200",
+    image: "https://picsum.photos/600/208",
     title: "Welcome to Our Store!",
     subtitle: "Discover amazing products every day",
     subtitle2: "Get 20% off on your first order",
@@ -43,7 +43,7 @@ const Banner = () => {
               {/* Overlay for text readability */}
               <View className="absolute inset-2 bg-black opacity-50 rounded-lg" />
 
-              <Text className="text-black text-xl font-psemibold text-center mb-2">
+              <Text className="text-black text-lg font-psemibold text-center mb-2">
                 {banner.title}
               </Text>
               <Text className="text-blue-600 bg-yellow-400 skew-y-6 text-md bg-opacity-20 px-3 py-1 font-pregular w-full text-center">

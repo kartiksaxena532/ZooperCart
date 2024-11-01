@@ -3,14 +3,14 @@ import { Tabs, Redirect } from 'expo-router'
 import { icons } from '../../constants'
 
 
-const TabIcon = ({icon, color, name, focused}) => {
+const TabIcon = ({ icon, color, name, focused ,height}) => {
   return (
     <View className="items-center justify-center gap-1">
       <Image
         source={icon}
         resizeMode='contain'
         tintColor={color}
-        className="w-4 h-4"
+        className={`w-${height} h-${height}`}
       />
       <Text className={`${focused ? 'font-psemibold' : "font-pregular"} text-[12px]  text-white`}>{name}</Text>
     </View>
@@ -19,27 +19,29 @@ const TabIcon = ({icon, color, name, focused}) => {
 const TabsLayout = () => {
   return (
     <>
-      <Tabs screenOptions={{tabBarShowLabel:false,
-      tabBarActiveTintColor: '#fdd339', 
-      tabBarInactiveTintColor: '#cdcde0',
-      tabBarStyle: {
-        backgroundColor: '#1e1e2d',
-        borderTopWidth: 2,
-        height: 55,
-        borderTopColor:"#232533",
-      },
+      <Tabs screenOptions={{
+        tabBarShowLabel: false,
+        tabBarActiveTintColor: '#fdd339',
+        tabBarInactiveTintColor: '#cdcde0',
+        tabBarStyle: {
+          backgroundColor: '#1e1e2d',
+          borderTopWidth: 2,
+          height: 55,
+          borderTopColor: "#232533",
+        },
       }}>
         <Tabs.Screen
           name="home"
           options={{
             title: "Home",
-            headerShown:false,
+            headerShown: false,
             tabBarIcon: ({ color, focused }) => (
-              <TabIcon 
-              icon={icons.home}
+              <TabIcon
+                icon={icons.home}
                 color={color}
                 name="Home"
                 focused={focused}
+                height={4}
               />
             )
 
@@ -48,14 +50,15 @@ const TabsLayout = () => {
         <Tabs.Screen
           name="bookmark"
           options={{
-            title: "Save",
-            headerShown:false,
+            title: "Wishlist",
+            headerShown: false,
             tabBarIcon: ({ color, focused }) => (
-              <TabIcon 
-              icon={icons.bookmark}
+              <TabIcon
+                icon={icons.bookmark}
                 color={color}
-                name="Save"
+                name="Wishlist"
                 focused={focused}
+                 height={4}
               />
             )
 
@@ -64,14 +67,15 @@ const TabsLayout = () => {
         <Tabs.Screen
           name="create"
           options={{
-            title: "Create",
-            headerShown:false,
+            title: "Cart",
+            headerShown: false,
             tabBarIcon: ({ color, focused }) => (
-              <TabIcon 
-              icon={icons.plus}
+              <TabIcon
+                icon={icons.cart}
                 color={color}
-                name="Create"
+                name="Cart"
                 focused={focused}
+                 height={4}
               />
             )
 
@@ -81,13 +85,14 @@ const TabsLayout = () => {
           name="profile"
           options={{
             title: "Profile",
-            headerShown:false,
+            headerShown: false,
             tabBarIcon: ({ color, focused }) => (
-              <TabIcon 
-              icon={icons.profile}
+              <TabIcon
+                icon={icons.profile}
                 color={color}
                 name="Profile"
                 focused={focused}
+                 height={4}
               />
             )
 

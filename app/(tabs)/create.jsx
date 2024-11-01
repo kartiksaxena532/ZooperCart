@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 const Create = () => {
   return (
     <SafeAreaView className="text-5xl  text-red mt-30">
-     <Text className="text-5xl text-red-500 mt-30" >Create</Text>
+     <Text className="text-5xl text-red-500 mt-30" >Cart</Text>
   </SafeAreaView>
   )
 }

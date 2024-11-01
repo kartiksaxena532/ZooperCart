@@ -4,7 +4,7 @@ import { SafeAreaView} from 'react-native-safe-area-context';
 import {images} from "../constants"
 import CustomButton from '../components/CustomButton';
 import { Redirect,router } from 'expo-router';
-import { useGlobalContext } from '../context/globalProvider';
+import { useGlobalContext } from '../context/GlobalProvider';
 
 export default function App() {
   return (
@@ -13,22 +13,21 @@ export default function App() {
      <ScrollView contentContainerStyle={{height :'100%'}} >
 <View className="w-full jutify-center items-center min-h-[85vh] px-4">
 <Image source={images.logo} className="w-[90px] h-[90px]" resizeMode='contain'/>
-<View className="flex-row gap-2">
-<Text className="text-3xl text-yellow-300 font-pbold">Deepak</Text>
-<Text className="text-3xl text-blue-300 font-pbold">Opticals</Text>
+<View className="flex-row">
+<Text className="text-3xl text-yellow-300 font-pbold">Zooper</Text>
+<Text className="text-3xl text-blue-300 font-pbold">Cart</Text>
 </View>
-<Image source={images.cards} className="w-[350px] h-[350px]" resizeMode='contain'/>
-
+<Image source={images.cards} className="w-full h-[350px]" resizeMode='contain'/>
 <View className="relative">
-<Text className="text-xl text-white font-pbold text-center">Welcome to <Text className=" text-yellow-300">Deepak</Text><Text className=" text-blue-300"> Opticals!</Text></Text>
+<Text className="text-2xl text-white font-pbold text-center">Welcome to <Text className=" text-blue-300">Zooper</Text></Text>
 <Text className="text-2xl text-white font-pbold text-center">Let's Get You A <Text className="text-yellow-300">New Look.</Text></Text>
 <Image source={images.path} className="w-[120px] h-[20px] absolute -bottom-2.5 right-8" resizeMode='contain'/>
 
 </View>
-<View className="mt-2">
-<Text className="text-sm text-slate-100 font-pregular text-center px-4">Where you can create cool custom eyewears for your friends and family using AI.</Text>
+<View className="mt-6">
+<Text className="text-sm text-slate-100 font-pregular text-center px-4">Where you can buy your favourite products with the best quality and price.</Text>
 </View>
-<CustomButton title="Continue with Email"
+<CustomButton title="Continue"
 handlePress={()=>router.push('/home')}
 containerStyle="w-full mt-7"
 />

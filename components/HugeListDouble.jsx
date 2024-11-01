@@ -3,7 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import {images} from "../constants"
 
 
-const HugeList = ({title,buttonText}) => {
+const HugeListDouble = ({title,buttonText}) => {
   const products = [
     {
       image: "https://picsum.photos/200/300?random=1",
@@ -319,8 +319,8 @@ const HugeList = ({title,buttonText}) => {
       <View className="flex flex-row items-center">
         <Text className="text-[14px] text-white font-psemibold text-start text-bold mt-1">{item.name}</Text>
       </View>
-      <View className="flex flex-col text-white justify-start">
-        <Text className="text-[12px] text-white font-pregular">{item.rating} <Image source={images.star} className="w-[11px] h-[11px] rounded-md" /></Text>
+      <View className="flex flex-col text-white justify-start ">
+        <Text className="text-[12px] text-white font-pregular">{item.rating} <Image source={images.star } className="w-[11px] h-[11px] rounded-md" /></Text>
         <Text className="text-[10px] text-white font-pregular pb-1">₹ {item.price}</Text>
 
       </View>
@@ -331,17 +331,29 @@ const HugeList = ({title,buttonText}) => {
 
   return (
     <View className="flex flex-col">
-    <Text className="text-[16px] text-white text-start capitalize mx-3 my-2 font-psemibold text-bold">{title}</Text>
-    <FlatList
-      data={products}
-      renderItem={renderItem}
-      keyExtractor={(item, index) => index.toString()}
-      horizontal
-      showsHorizontalScrollIndicator={false}
-    />
+    <Text className="text-[18px] text-white text-center capitalize mx-3 my-2 font-psemibold text-bold">{title}</Text>
+    <Image source={images.path} className="w-[100px] h-[20px] mx-auto -mt-5" resizeMode='contain'/>
+    <View className="flex flex-col">
+      <FlatList
+        data={products}
+        renderItem={({ item, index }) => (
+          <View>
+            {index % 2 === 0 && (
+              <View>
+                {renderItem({ item })}
+                {index + 1 < products.length && renderItem({ item: products[index + 1] })}
+              </View>
+            )}
+          </View>
+        )}
+        keyExtractor={(item, index) => index.toString()}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+      />
+    </View>
     </View>
   );
 };
 
 
-export default HugeList;
+export default HugeListDouble;

@@ -1,30 +1,24 @@
-import { FlatList, TouchableOpacity, View, Text, Image } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import {images} from "../constants"
-
-
-const HugeList = ({title,buttonText}) => {
-  const products = [
+const products = [
     {
-      image: "https://picsum.photos/200/300?random=1",
+      image: "https://picsum.photos/200/300?random=14",
       name: "Product 1",
       rating: 4.5,
       price: 29.99,
     },
     {
-      image: "https://picsum.photos/200/300?random=2",
+      image: "https://picsum.photos/200/300?random=13",
       name: "Product 2",
       rating: 4.0,
       price: 19.99,
     },
     {
-      image: "https://picsum.photos/200/300?random=3",
+      image: "https://picsum.photos/200/300?random=17",
       name: "Product 3",
       rating: 3.5,
       price: 24.99,
     },
     {
-      image: "https://picsum.photos/200/300?random=4",
+      image: "https://picsum.photos/200/300?random=18",
       name: "Product 4",
       rating: 5.0,
       price: 39.99,
@@ -306,42 +300,5 @@ const HugeList = ({title,buttonText}) => {
       price: 32.99,
     },
   ];
-
-  const renderItem = ({ item }) => (
-    <TouchableOpacity className="flex flex-row justify-center items-center">
-      <View className="absolute top-2 left-4 z-10 w-[8vw] h-[4vh] bg-orange-500 rounded-md">
-        <Text className="text-white text-start px-1 font-psemibold text-[10px]">{Math.floor(Math.random() * (15 - 5)) + 5}% Off</Text>
-      </View>
-    <View className="flex flex-col px-2 py-2 ml-3 justify-start bg-transparent ring-1 ring-slate-500 h-[22vh] w-[28vw] rounded-lg">
-    <View className="shadow-md shadow-white border-[0.5px] border-white rounded-md">
-      <Image source={{ uri: item.image }} className="w-full h-[70px] rounded-md" />
-      </View>
-      <View className="flex flex-row items-center">
-        <Text className="text-[14px] text-white font-psemibold text-start text-bold mt-1">{item.name}</Text>
-      </View>
-      <View className="flex flex-col text-white justify-start">
-        <Text className="text-[12px] text-white font-pregular">{item.rating} <Image source={images.star} className="w-[11px] h-[11px] rounded-md" /></Text>
-        <Text className="text-[10px] text-white font-pregular pb-1">₹ {item.price}</Text>
-
-      </View>
-      <Text className="text-[10px] text-center font-pmedium bg-yellow-300 w-[70%] rounded-xl">{buttonText}</Text>
-    </View>
-    </TouchableOpacity>
-  );
-
-  return (
-    <View className="flex flex-col">
-    <Text className="text-[16px] text-white text-start capitalize mx-3 my-2 font-psemibold text-bold">{title}</Text>
-    <FlatList
-      data={products}
-      renderItem={renderItem}
-      keyExtractor={(item, index) => index.toString()}
-      horizontal
-      showsHorizontalScrollIndicator={false}
-    />
-    </View>
-  );
-};
-
-
-export default HugeList;
+  
+  export default products;
