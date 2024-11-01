@@ -10,7 +10,7 @@ const List = () => {
     <Photo item={item} />
     <View className="flex flex-col justify-between">
         <View className=" relative w-full h-[17vh]">
-          <Text className="text-white text-lg font-semibold   font-pbold">{item.name}</Text>
+          <Text className="text-white text-lg font-semibold font-pbold">{item.name}</Text>
 
           <Text className="text-white text-md   font-psemibold">Price: ${item.price.toFixed(2)}</Text>
           <Text className="text-yellow-500 text-md   font-pthin">Rating: {item.rating} ⭐</Text>

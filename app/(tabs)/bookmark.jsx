@@ -2,6 +2,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { View, FlatList, Text, Image, TouchableOpacity } from 'react-native';
 import useWishlistStore from '../../context/WishlistStore';
 import Photo from '../../components/RestList/Image';
+import {images} from "../../constants"
 
 const Bookmark = () => {
   const wishlist = useWishlistStore((state) => state.wishlist);
@@ -11,13 +12,26 @@ const Bookmark = () => {
       <View className="mx-1 mt-2 mb-12">
         <Text className="text-blue-400 text-lg font-pbold mx-2">Hey Kartik,</Text>
         <Text className="text-xs font-psemibold text-yellow-400 capitalize mx-2">This is your wishlist</Text>
+
+        {wishlist.length === 0 ? (
+          <View className="flex justify-center h-full items-center">
+        <Image 
+          source={images.emptyWishlist} // Replace with your empty state image
+          className="w-[200px] h-[200px] opacity-40"
+          resizeMode="contain"
+        />
+        <Text className="text-xl mx-2 text-gray-500 capitalize font-psemibold">Opps its empty!</Text>
+        <Text className="text-md mx-2 text-gray-500 capitalize font-pregular">We've got you covered</Text>
+        </View>
+      ) : (
+        <>
         <FlatList
           data={wishlist}
           keyExtractor={(item, index) => index.toString()} // Use index as a unique key
           showsVerticalScrollIndicator={false}
           renderItem={({ item }) => (
             <View>
-              <View className="flex flex-row justify-between items-center py-2 px-4 rounded-md">
+              <View className="flex flex-row justify-between items-center py-3 px-4 rounded-md">
                 <Photo item={item} />
                 <View className="flex flex-col justify-between">
                   <View className=" relative w-full h-[17vh]">
@@ -42,9 +56,12 @@ const Bookmark = () => {
                   </TouchableOpacity>
                 </View>
               </View>
+              
             </View>
           )}
         />
+</>
+      )}
       </View>
     </SafeAreaView>
   );

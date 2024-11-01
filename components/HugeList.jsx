@@ -309,9 +309,8 @@ const HugeList = ({title,buttonText}) => {
 
   const renderItem = ({ item }) => (
     <TouchableOpacity className="flex flex-row justify-center items-center">
-      <View className="absolute top-2 left-4 z-10 w-[8vw] h-[4vh] bg-orange-500 rounded-md">
-        <Text className="text-white text-start px-1 font-psemibold text-[10px]">{Math.floor(Math.random() * (15 - 5)) + 5}% Off</Text>
-      </View>
+      <Image source={images.off} className="absolute top-1 left-2 z-10 w-[10vw] h-[5.5vh]"/>
+        <Text className="absolute text-black-100 text-start px-1 top-2 left-3 z-[99] font-psemibold text-[10px]">{Math.floor(Math.random() * (15 - 5)) + 5}% {"\n"} Off</Text>
     <View className="flex flex-col px-2 py-2 ml-3 justify-start bg-transparent ring-1 ring-slate-500 h-[22vh] w-[28vw] rounded-lg">
     <View className="shadow-md shadow-white border-[0.5px] border-white rounded-md">
       <Image source={{ uri: item.image }} className="w-full h-[70px] rounded-md" />
