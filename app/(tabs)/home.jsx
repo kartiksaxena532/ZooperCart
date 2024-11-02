@@ -12,7 +12,7 @@ const Home = () => {
   const data = [
     { key: 'navbar', component: <Navbar /> },
     { key: 'search', component: <Search /> },
-    { key: 'hugeList', component: <HugeList title="Try our Latest collection!" buttonText="Buy Now" /> },
+    { key: 'hugeList', component: <HugeList title="Try our Latest collection!" buttonText="Add to cart" /> },
     { key: 'banner', component: <Banner /> },
     { key: 'hugeListDouble', component: <HugeListDouble title="Some Popular Products" buttonText="Explore" /> },
     { key: 'hugeListSmall', component: <HugeListSmall title="Featured Categories" /> },

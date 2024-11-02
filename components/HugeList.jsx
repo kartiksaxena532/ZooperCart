@@ -1,9 +1,21 @@
 import { FlatList, TouchableOpacity, View, Text, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useState } from "react";
 import {images} from "../constants"
-
+import Counter from "./Counter/Counter";
 
 const HugeList = ({title,buttonText}) => {
+
+  const [isCounterVisibleMap, setIsCounterVisibleMap] = useState({});
+
+  // Toggle the counter for a specific item using its index
+  const toggleCounterVisibility = (index) => {
+    setIsCounterVisibleMap((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
+  
   const products = [
     {
       image: "https://picsum.photos/200/300?random=1",
@@ -307,34 +319,50 @@ const HugeList = ({title,buttonText}) => {
     },
   ];
 
-  const renderItem = ({ item }) => (
-    <TouchableOpacity className="flex flex-row justify-center items-center">
-      <Image source={images.off} className="absolute top-1 left-2 z-10 w-[10vw] h-[5.5vh]"/>
-        <Text className="absolute text-black-100 text-start px-1 top-2 left-3 z-[99] font-psemibold text-[10px]">{Math.floor(Math.random() * (15 - 5)) + 5}% {"\n"} Off</Text>
-    <View className="flex flex-col px-2 py-2 ml-3 justify-start bg-transparent ring-1 ring-slate-500 h-[22vh] w-[28vw] rounded-lg">
-    <View className="shadow-md shadow-white border-[0.5px] border-white rounded-md">
-      <Image source={{ uri: item.image }} className="w-full h-[70px] rounded-md" />
+  const renderItem = ({ item,index }) => (
+    <View className="flex flex-row justify-center items-center">
+    <Image source={images.off} className="absolute top-1 left-2 z-10 w-[10vw] h-[5.5vh]" />
+    <Text className="absolute text-black-100 text-start px-1 top-2 left-3 z-[99] font-psemibold text-[10px]">
+      {Math.floor(Math.random() * (15 - 5)) + 5}% {"\n"} Off
+    </Text>
+
+    <View className="flex flex-col px-2 py-2 ml-3 justify-start bg-transparent ring-1 ring-slate-500 h-[23vh] w-[28vw] rounded-lg">
+      <View className="shadow-md shadow-white border-[0.5px] border-white rounded-md">
+        <Image source={{ uri: item.image }} className="w-full h-[70px] rounded-md" />
       </View>
+
       <View className="flex flex-row items-center">
         <Text className="text-[14px] text-white font-psemibold text-start text-bold mt-1">{item.name}</Text>
       </View>
-      <View className="flex flex-col text-white justify-start">
-        <Text className="text-[12px] text-white font-pregular">{item.rating} <Image source={images.star} className="w-[11px] h-[11px] rounded-md" /></Text>
-        <Text className="text-[10px] text-white font-pregular pb-1">₹ {item.price}</Text>
 
+      <View className="flex flex-col text-white justify-start">
+        <Text className="text-[12px] text-white font-pregular">
+          {item.rating} <Image source={images.star} className="w-[11px] h-[11px] rounded-md" />
+        </Text>
+        <Text className="text-[10px] text-white font-pregular pb-1">₹ {item.price}</Text>
       </View>
-      <Text className="text-[10px] text-center font-pmedium bg-yellow-300 w-[70%] rounded-xl">{buttonText}</Text>
+
+      {isCounterVisibleMap[index] ? (
+        <Counter onClose={() => toggleCounterVisibility(index)} />
+      ) : (
+        <TouchableOpacity
+          onPress={() => toggleCounterVisibility(index)}
+          className="bg-yellow-300 w-[90%] rounded-lg h-7 py-1"
+        >
+          <Text className="text-[12px] text-center font-pbold ">{buttonText}</Text>
+        </TouchableOpacity>
+      )}
     </View>
-    </TouchableOpacity>
+  </View>
   );
 
   return (
     <View className="flex flex-col">
     <Text className="text-[16px] text-white text-start capitalize mx-3 my-2 font-psemibold text-bold">{title}</Text>
     <FlatList
-      data={products}
+       data={products}
       renderItem={renderItem}
-      keyExtractor={(item, index) => index.toString()}
+      keyExtractor={(_, index) => index.toString()}
       horizontal
       showsHorizontalScrollIndicator={false}
     />
