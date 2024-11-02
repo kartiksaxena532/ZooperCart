@@ -321,12 +321,12 @@ const HugeListDouble = ({title,buttonText}) => {
 
   const renderItem = ({ item ,index}) => (
     <View className="flex flex-row justify-center items-center">
-    <Image source={images.off} className="absolute top-1 left-2 z-10 w-[10vw] h-[5.5vh]" />
-    <Text className="absolute text-black-100 text-start px-1 top-2 left-3 z-[99] font-psemibold text-[10px]">
+     <Image source={images.off} className="absolute top-1 left-1 z-10 w-[10vw] h-[5.5vh]" />
+    <Text className="absolute text-black-100 text-start px-1 top-2 left-2 z-[99] font-psemibold text-[10px]">
       {Math.floor(Math.random() * (15 - 5)) + 5}% {"\n"} Off
     </Text>
 
-    <View className="flex flex-col px-2 py-2 ml-3 justify-start bg-transparent ring-1 ring-slate-500 h-[23vh] w-[28vw] rounded-lg">
+    <View className="flex flex-col  py-2 ml-3 justify-start bg-transparent ring-1 ring-slate-500 h-[23vh] w-[28vw] rounded-lg">
       <View className="shadow-md shadow-white border-[0.5px] border-white rounded-md">
         <Image source={{ uri: item.image }} className="w-full h-[70px] rounded-md" />
       </View>

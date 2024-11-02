@@ -10,7 +10,7 @@ const Filters = () => {
     { text: "Sort By", icon: images.downArrow },
     { text: "Free Delivery", icon: images.basket }, // Example icon
     { text: "Premium", icon: images.premium }, // Example icon
-    { text: "Under $20", icon: null },
+    { text: "Under ₹ 20", icon: null },
   ];
 
   const renderItem = ({ item }) => (
