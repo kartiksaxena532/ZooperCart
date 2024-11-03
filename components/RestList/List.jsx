@@ -35,7 +35,7 @@ const List = () => {
   
     return (
         <View className="mx-3">
-            <Text className="text-white text-lg px-2 font-semibold">Explore Top Restaurants</Text>
+            <Text className="text-white text-lg px-2 font-psemibold">Explore Top Restaurants</Text>
         <FlatList
         data={products.slice(0, 8)} // Only take the first 8 products
         renderItem={renderItem}

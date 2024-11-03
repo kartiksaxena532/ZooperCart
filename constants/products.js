@@ -30,13 +30,13 @@ const products = [
       price: 34.99,
     },
     {
-      image: "https://picsum.photos/200/300?random=6",
+      image: "https://picsum.photos/200/300?random=24",
       name: "Product 6",
       rating: 3.9,
       price: 21.99,
     },
     {
-      image: "https://picsum.photos/200/300?random=7",
+      image: "https://picsum.photos/200/300?random=20",
       name: "Product 7",
       rating: 4.3,
       price: 28.99,
@@ -302,3 +302,6 @@ const products = [
   ];
   
   export default products;
+
+  
+export const wavyData = "M 0 2000 0 500 Q 62.5 280 125 500 t 125 0 125 0 125 0 125 0 125 0 125 0 125 0 125 0 125 0 125 0   125 0 125 0 125 0  125 0 125 0 125 0  125 0 125 0 125 0  125 0 125 0 125 0  125 0 125 0 125 0  125 0 125 0 125 0  125 0 125 0 125 0  125 0 125 0 125 0  125 0 125 0 125 0  125 0 125 0 125 0 v1000 z"

@@ -29,23 +29,9 @@ const HugeListSmall = ({ title }) => {
 
   const renderItem = ({ item }) => (
     <TouchableOpacity className="flex flex-row justify-center items-center">
-    <View className="flex flex-col py-2 ml-2 justify-start bg-transparent h-[15vh] w-[25vw] rounded-lg">
-      <View className="shadow-md border-[0.5px] border-white shadow-yellow-600 rounded-full">
-        <Image source={{ uri: item.image }} className="w-full h-[60px] rounded-full ring-2 ring-slate-500" />
-      </View>
-      <View className="flex flex-row justify-center">
-        <Text
-          className="text-[11px] text-white font-psemibold text-center mt-1"
-          numberOfLines={1}
-          ellipsizeMode="tail" 
-        >
-          {item.name}
-        </Text>
-      </View>
-    </View>
-    <View className="flex flex-col py-2 ml-2 justify-start bg-transparent h-[15vh] w-[25vw] rounded-lg">
-      <View className="shadow-md border-[0.5px] border-white shadow-yellow-600 rounded-full">
-        <Image source={{ uri: item.image }} className="w-full h-[60px] rounded-full ring-2 ring-slate-500" />
+    <View className="flex flex-col py-2 ml-2 justify-start bg-transparent h-[15vh] w-[22vw] rounded-md">
+      <View className="shadow-md border-[0.5px] border-white shadow-yellow-600 rounded-md">
+        <Image source={{ uri: item.image }} className="w-full h-[60px] rounded-md ring-2 ring-slate-500" />
       </View>
       <View className="flex flex-row justify-center">
         <Text
@@ -63,7 +49,7 @@ const HugeListSmall = ({ title }) => {
 
   return (
     <View className="flex flex-col">
-      <Text className="text-[15px] text-white text-start capitalize mx-3 my-2 font-psemibold text-bold">{title}</Text>
+      <Text className="text-[18px] text-white text-start capitalize mx-3 my-2 font-psemibold">{title}</Text>
       <ScrollView>
       <FlatList
         data={meals}

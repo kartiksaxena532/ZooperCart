@@ -4,19 +4,19 @@ import Swiper from "react-native-swiper";
 
 const bannerData = [
   {
-    image: "https://picsum.photos/600/208",
+    image: "https://picsum.photos/600/218",
     title: "Welcome to Our Store!",
     subtitle: "Discover amazing products every day",
     subtitle2: "Get 20% off on your first order",
   },
   {
-    image: "https://picsum.photos/600/201",
+    image: "https://picsum.photos/600/211",
     title: "Exclusive Deals Await",
     subtitle: "Shop top brands with big discounts",
     subtitle2: "Get 30% off on your second order",
   },
   {
-    image: "https://picsum.photos/600/202",
+    image: "https://picsum.photos/600/212",
     title: "New Arrivals",
     subtitle: "Find the latest trends here",
     subtitle2: "Get 10% off on your fourth* order",
