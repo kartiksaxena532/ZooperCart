@@ -1,103 +1,104 @@
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { View, FlatList, Text, Image, TouchableOpacity,ScrollView } from 'react-native';
+import { View, FlatList, Text, Image, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import useWishlistStore from '../../context/WishlistStore';
 import Photo from '../../components/RestList/Image';
-import {images} from "../../constants"
-import {Svg,Defs ,Path ,Use, G} from 'react-native-svg';
-
+import { images } from "../../constants"
+import { Svg, Defs, Path, Use, G } from 'react-native-svg';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import CardContainer from '../../components/EwalletCard/CardContainer';
+import SmallCard from '../../components/EwalletCard/SmallCard';
 import { wavyData } from '../../constants/products';
 
 
 const Ewallet = () => {
-  const wishlist = useWishlistStore((state) => state.wishlist);
+  const data = [
+    {
+      index: 10,
+      image: require('../../assets/amex.png'),
+      bgvalue: "bg-blue-500",
+      name:"Kartik Saxena",
+      number: "7587 8845 12331",
+      cardname:"American Express",
+      year: "01 / 1995"
+
+
+    },
+    {
+      index: 11,
+      image: require('../../assets/visa.png'),
+      bgvalue: "bg-yellow-600",
+      name:"Kartik Saxena",
+      number: "7587 8845 12331",
+      cardname:"Visa Rupay",
+       year: "04 / 1998"
+    },
+    {
+      index: 12,
+      image: require('../../assets/master.png'),
+      bgvalue: "bg-gray-500",
+      name:"Kartik Saxena",
+      number:"8587 2945 12331",
+      cardname:"MasterCard",
+       year: "07 / 1996"
+      
+    }
+  ];
+
+  const transactionsData = [
+    { id: 1, date: '2024-11-01', amount: 120.5, description: 'Grocery Shopping', type: 'debit' ,cardname: 'MasterCard'},
+    { id: 2, date: '2024-11-02', amount: 500.0, description: 'Salary', type: 'credit' ,cardname: 'Visa'},
+    { id: 3, date: '2024-11-03', amount: 30.75, description: 'Coffee Shop', type: 'debit' ,cardname: 'MasterCard'},
+    { id: 4, date: '2024-11-01', amount: 120.5, description: 'Grocery Shopping', type: 'debit',cardname: 'AMEX' },
+    { id: 5, date: '2024-11-02', amount: 500.0, description: 'Salary', type: 'credit' ,cardname: 'Visa' },
+    { id: 6, date: '2024-11-03', amount: 30.75, description: 'Coffee Shop', type: 'debit',cardname: 'MasterCard' },
+    { id: 7, date: '2024-11-01', amount: 120.5, description: 'Grocery Shopping', type: 'debit',cardname: 'Visa' },
+    { id: 8, date: '2024-11-02', amount: 500.0, description: 'Salary', type: 'credit',cardname: 'MasterCard' },
+    { id: 9, date: '2024-11-03', amount: 30.75, description: 'Coffee Shop', type: 'debit',cardname: 'AMEX' },
+    // Add more transactions as needed
+  ];
 
   return (
     <SafeAreaView className="bg-black-100 flex-1 font-pmedium">
-    {/* Fixed Header */}
-    <View className="bg-green-500 mb-4">
-      <Image 
-        source={images.wishlistHead} // Replace with your empty state image
-        className="w-[100px] h-[100px] flex mx-auto"
-        resizeMode="contain"
-      />
-       <Svg 
-    width="100%"
-    height="40%"
-    fill="#1e1e2d"
-    viewBox='10 0 800 1000'
-    preserveAspectRatio='none'
-    className="absolute w-full -bottom-1"
-    >
-      <Defs>
-        <Path id="wave" d={wavyData} />
-      </Defs>
-      <G>
-        <Use href="#wave" y="320"/>
-      </G>
-    </Svg>
-      <Text className="text-2xl font-pbold text-center mb-4 text-red-50 capitalize mx-2">
-        My Wallet
-      </Text>
-    </View>
-
-    {/* Conditional Rendering based on Wishlist */}
-    {wishlist.length === 0 ? (
-      <View className="flex justify-center h-[70%] items-center">
-        <Image 
-          source={images.emptyWishlist}
-          className="w-[200px] h-[200px] opacity-40"
+      <View className="bg-green-500 mb-1">
+        <Image
+          source={images.wishlistHead} // Replace with your empty state image
+          className="w-[100px] h-[100px] flex mx-auto"
           resizeMode="contain"
         />
-        <Text className="text-xl mx-2 text-gray-500 capitalize font-psemibold">
-          Opps its empty!
-        </Text>
-        <Text className="text-md mx-2 text-gray-500 capitalize font-pregular">
-          We've got you covered
+        <Svg
+          width="100%"
+          height="40%"
+          fill="#1e1e2d"
+          viewBox='10 0 800 1000'
+          preserveAspectRatio='none'
+          className="absolute w-full -bottom-1"
+        >
+          <Defs>
+            <Path id="wave" d={wavyData} />
+          </Defs>
+          <G>
+            <Use href="#wave" y="320" />
+          </G>
+        </Svg>
+        <Text className="text-2xl font-pbold text-center mb-4 text-red-50 capitalize mx-2">
+          My Wallet
         </Text>
       </View>
-    ) : (
-      // Scrollable FlatList below the fixed header
-      <FlatList
-        data={wishlist}
-        keyExtractor={(item, index) => index.toString()}
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ paddingHorizontal: 10 }}
-        renderItem={({ item }) => (
-          <View className="flex flex-row justify-between items-center py-3 px-4 rounded-md">
-            <Photo item={item} />
-            <View className="flex flex-col justify-between">
-              <View className="w-full h-[17vh]">
-                <Text className="text-white text-lg font-semibold font-pbold">
-                  {item.name}
-                </Text>
-                <Text className="text-white text-md font-psemibold">
-                  Price: ${item.price.toFixed(2)}
-                </Text>
-                <Text className="text-yellow-500 text-md font-pthin">
-                  Rating: {item.rating} ⭐
-                </Text>
-                <View className="flex flex-row justify-between">
-                  <Text className="text-white text-sm font-pthin">North Indian</Text>
-                  <Text className="text-yellow-500 text-sm font-pthin">4.5</Text>
-                </View>
-                <View className="flex flex-row justify-between">
-                  <Text className="text-white text-sm font-pthin">Indrapuram</Text>
-                  <Text className="text-yellow-500 text-sm font-pthin">10-20 mins</Text>
-                </View>
-              </View>
-              <TouchableOpacity>
-                <View className="flex justify-center items-center text-center bg-red-500 rounded-full text-md w-[45vw] h-10">
-                  <Text className="text-white text-lg font-pbold">
-                    Extra {Math.floor(Math.random() * (15 - 5)) + 5}% Off
-                  </Text>
-                </View>
-              </TouchableOpacity>
-            </View>
-          </View>
-        )}
-      />
-    )}
-  </SafeAreaView>
+      <GestureHandlerRootView style={{ flex: 0.5 }}>
+        <SafeAreaView className="flex items-center mt-5">
+          <CardContainer data={data} maxVisibleItems={3} />
+        </SafeAreaView>
+      </GestureHandlerRootView>
+      <TouchableOpacity>
+<Text className="text-md text-blue-300 text-center mt-1 font-pregular">Add A Card</Text>
+</TouchableOpacity>
+<View className="flex-[0.6] ">
+      <Text className="text-white text-lg ml-3 font-pmedium text-left ">Transaction History</Text>
+      <View className="px-1">
+        <SmallCard transactions={transactionsData} />
+      </View>
+    </View>
+    </SafeAreaView>
   );
 }
 

@@ -84,13 +84,13 @@ const TabsLayout = () => {
         <Tabs.Screen
           name="ewallet"
           options={{
-            title: "Ewallet",
+            title: "EWallet",
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
               <TabIcon
                 icon={icons.wallet}
                 color={color}
-                name="Ewallet"
+                name="Wallet"
                 focused={focused}
                  height={6}
               />
