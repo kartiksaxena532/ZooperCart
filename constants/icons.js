@@ -12,7 +12,7 @@ import eyeHide from "../assets/icons/eye-hide.png";
 import eye from "../assets/icons/eye.png";
 import play from "../assets/icons/play.png";
 import cart from "../assets/icons/cart.png";
-
+import wallet from "../assets/icons/wallet.png";
 export default {
   play,
   bookmark,
@@ -27,5 +27,6 @@ export default {
   logout,
   eyeHide,
   eye,
-  cart
+  cart,
+  wallet
 };

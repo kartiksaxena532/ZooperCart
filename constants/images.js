@@ -19,6 +19,11 @@ import filters from "../assets/icons/filters.png";
 import banner1 from "../assets/banner1.png";
 import banner2 from "../assets/banner2.png";
 import banner3 from "../assets/banner3.png";
+import wishlistHead from "../assets/3dicons/card-dynamic-color.png";
+import cart3d from "../assets/3dicons/cart.png";
+import like from "../assets/3dicons/like.png";
+import cartEmpty from "../assets/3dicons/cartempty.png";
+
 export default {
   profile,
   thumbnail,
@@ -41,4 +46,8 @@ export default {
   banner1,
   banner2,
   banner3,
+  wishlistHead,
+  like,
+  cart3d,
+  cartEmpty
 };

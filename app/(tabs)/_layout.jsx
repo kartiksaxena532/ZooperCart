@@ -26,7 +26,7 @@ const TabsLayout = () => {
         tabBarStyle: {
           backgroundColor: '#1e1e2d',
           borderTopWidth: 2,
-          height: 55,
+          height: 60,
           borderTopColor: "#232533",
         },
       }}>
@@ -41,14 +41,14 @@ const TabsLayout = () => {
                 color={color}
                 name="Home"
                 focused={focused}
-                height={4}
+                height={6}
               />
             )
 
           }}
         />
         <Tabs.Screen
-          name="bookmark"
+          name="wishlist"
           options={{
             title: "Wishlist",
             headerShown: false,
@@ -58,14 +58,14 @@ const TabsLayout = () => {
                 color={color}
                 name="Wishlist"
                 focused={focused}
-                 height={4}
+                 height={6}
               />
             )
 
           }}
         />
         <Tabs.Screen
-          name="create"
+          name="cart"
           options={{
             title: "Cart",
             headerShown: false,
@@ -75,24 +75,24 @@ const TabsLayout = () => {
                 color={color}
                 name="Cart"
                 focused={focused}
-                 height={4}
+                 height={6}
               />
             )
 
           }}
         />
         <Tabs.Screen
-          name="profile"
+          name="ewallet"
           options={{
-            title: "Profile",
+            title: "Ewallet",
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
               <TabIcon
-                icon={icons.profile}
+                icon={icons.wallet}
                 color={color}
-                name="Profile"
+                name="Ewallet"
                 focused={focused}
-                 height={4}
+                 height={6}
               />
             )
 
