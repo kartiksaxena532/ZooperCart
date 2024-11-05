@@ -1,4 +1,4 @@
-import { View, FlatList, Text } from 'react-native';
+import { View, FlatList,Text,Button } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Search from '../../components/Search';
 import HugeList from '../../components/HugeList';
@@ -8,7 +8,8 @@ import HugeListSmall from '../../components/HugeListSmall';
 import HugeListDouble from '../../components/HugeListDouble';
 import RestList from '../../components/RestList/RestList';
 import AdBanner from '../../components/AdBanner/AdBanner';
-import {images} from '../../constants'
+import {images} from '../../constants';
+
 
 const Home = () => {
   const data = [

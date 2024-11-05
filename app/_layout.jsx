@@ -1,13 +1,14 @@
 //rnfes react native function component in style basically stylesheet wala component snippet
-
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import * as React from 'react';
+import { StyleSheet, Text, View,Button } from 'react-native'
 import { SplashScreen,Stack } from "expo-router"
 import{useFonts} from "expo-font"
 import { useEffect } from 'react';
-import GlobalProvider from '../context/GlobalProvider';
-
 SplashScreen.preventAutoHideAsync();
+
+
+
+
 
 const RootLayout = () => {
 
@@ -36,9 +37,17 @@ const [fontsLoaded, error]= useFonts({
   return (
 
       <Stack>
+        
         <Stack.Screen name="index" options={{headerShown:  false}} />
         <Stack.Screen name="(auth)" options={{headerShown:  false}} />
         <Stack.Screen name="(tabs)" options={{headerShown:  false}} />
+        <Stack.Screen
+        name="modal"
+        options={{
+          presentation: 'modal',
+          headerShown:  false
+        }}
+      />
         {/*
          <Stack.Screen name="/search/[query]" options={{headerShown:  false}} />*/}
       </Stack>
