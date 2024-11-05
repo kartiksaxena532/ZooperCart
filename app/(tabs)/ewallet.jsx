@@ -90,7 +90,7 @@ const Ewallet = () => {
         </SafeAreaView>
       </GestureHandlerRootView>
       <TouchableOpacity>
-<Text className="text-md text-blue-300 text-center mt-1 font-pregular">Add A Card</Text>
+<Text className="text-md text-blue-300 text-center mt-4 font-pregular">Add A Card</Text>
 </TouchableOpacity>
 <View className="flex-[0.6] ">
       <Text className="text-white text-lg ml-3 font-pmedium text-left ">Transaction History</Text>

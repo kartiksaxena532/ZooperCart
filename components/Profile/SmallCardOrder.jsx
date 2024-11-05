@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, FlatList } from 'react-native';
 
-const SmallCard = ({ transactions }) => {
+const SmallCardOrder = ({ orders }) => {
     const renderTransaction = ({ item }) => (
         <View className="border-2 gap-2 m-1 border-gray-700 px-2 rounded-lg ">
             <View className="flex flex-row justify-between">
@@ -21,7 +21,7 @@ const SmallCard = ({ transactions }) => {
     return (
         <View className=" h-[55vh] mb-4">
             <FlatList
-                data={transactions}
+                data={orders}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={renderTransaction}
                 showsVerticalScrollIndicator={false}
@@ -30,4 +30,4 @@ const SmallCard = ({ transactions }) => {
     );
 };
 
-export default SmallCard;
+export default SmallCardOrder;

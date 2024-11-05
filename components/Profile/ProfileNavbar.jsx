@@ -1,14 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import { Link } from 'expo-router'
-import React from 'react'
+import { images } from '../../constants'
 
 const ProfileNavbar = () => {
   return (
-    <View >
-       <Link href="/home">
-          <Text className="text-2xl font-pregular text-white">Go back</Text>
-        </Link>
-    </View>
+    <TouchableOpacity className=" h-[6vh] items-start flex">
+      <Link href="/home" className='h-10  w-10'>
+        <Image source={images.back} className="h-8 w-8" />
+      </Link>
+    </TouchableOpacity>
   )
 }
 

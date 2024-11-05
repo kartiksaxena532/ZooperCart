@@ -23,6 +23,7 @@ import wishlistHead from "../assets/3dicons/card-dynamic-color.png";
 import cart3d from "../assets/3dicons/cart.png";
 import like from "../assets/3dicons/like.png";
 import cartEmpty from "../assets/3dicons/cartempty.png";
+import back from "../assets/icons/back.png";
 
 export default {
   profile,
@@ -49,5 +50,6 @@ export default {
   wishlistHead,
   like,
   cart3d,
-  cartEmpty
+  cartEmpty,
+  back
 };
