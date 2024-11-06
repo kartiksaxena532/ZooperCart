@@ -24,7 +24,8 @@ import cart3d from "../assets/3dicons/cart.png";
 import like from "../assets/3dicons/like.png";
 import cartEmpty from "../assets/3dicons/cartempty.png";
 import back from "../assets/icons/back.png";
-
+import order from "../assets/icons/orders.png";
+import orderHead from "../assets/3dicons/orderHead.png";
 export default {
   profile,
   thumbnail,
@@ -51,5 +52,7 @@ export default {
   like,
   cart3d,
   cartEmpty,
-  back
+  back,
+  order,
+  orderHead
 };

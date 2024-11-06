@@ -3,6 +3,7 @@ import { View, FlatList, Text, Image, TouchableOpacity,ScrollView } from 'react-
 import useWishlistStore from '../../context/WishlistStore';
 import Photo from '../../components/RestList/Image';
 import { images } from "../../constants";
+import { StatusBar } from 'expo-status-bar';
 import {Svg,Defs ,Path ,Use, G} from 'react-native-svg';
 
 import { wavyData } from '../../constants/products';
@@ -16,12 +17,12 @@ const Cart = () => {
     <View className="bg-blue-500 mb-4">
       <Image 
         source={images.cart3d} // Replace with your empty state image
-        className="w-[100px] h-[100px] flex mx-auto -rotate-45 "
+        className="w-[45px] h-[45px] flex mx-auto -rotate-45 mt-1  "
         resizeMode="contain"
       />
        <Svg 
     width="100%"
-    height="40%"
+    height="60%"
     fill="#1e1e2d"
     viewBox='10 0 800 1000'
     preserveAspectRatio='none'
@@ -34,7 +35,7 @@ const Cart = () => {
         <Use href="#wave" y="320"/>
       </G>
     </Svg>
-      <Text className="text-2xl font-pbold text-center mb-4 text-red-50 capitalize mx-2">
+      <Text className="text-md font-psemibold text-center mb-4 text-red-50 capitalize mx-2">
         My Cart
       </Text>
     </View>

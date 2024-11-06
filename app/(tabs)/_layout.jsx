@@ -1,9 +1,9 @@
 import { Text, View, Image } from 'react-native'
 import { Tabs, Redirect } from 'expo-router'
-import { icons } from '../../constants'
+import { icons ,images} from '../../constants'
 
 
-const TabIcon = ({ icon, color, name, focused ,height}) => {
+const TabIcon = ({ icon, color, name, focused, height }) => {
   return (
     <View className="items-center justify-center gap-1">
       <Image
@@ -58,7 +58,7 @@ const TabsLayout = () => {
                 color={color}
                 name="Wishlist"
                 focused={focused}
-                 height={6}
+                height={6}
               />
             )
 
@@ -75,7 +75,7 @@ const TabsLayout = () => {
                 color={color}
                 name="Cart"
                 focused={focused}
-                 height={6}
+                height={6}
               />
             )
 
@@ -92,7 +92,24 @@ const TabsLayout = () => {
                 color={color}
                 name="Wallet"
                 focused={focused}
-                 height={6}
+                height={6}
+              />
+            )
+
+          }}
+        />
+        <Tabs.Screen
+          name="orders"
+          options={{
+            title: "Orders",
+            headerShown: false,
+            tabBarIcon: ({ color, focused }) => (
+              <TabIcon
+                icon={images.order}
+                color={color}
+                name="Orders"
+                focused={focused}
+                height={6}
               />
             )
 

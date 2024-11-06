@@ -19,7 +19,7 @@ const SmallCard = ({ transactions }) => {
     );
 
     return (
-        <View className=" h-[55vh] mb-4">
+        <View className=" h-[55vh] ">
             <FlatList
                 data={transactions}
                 keyExtractor={(item) => item.id.toString()}

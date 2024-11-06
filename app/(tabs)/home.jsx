@@ -8,6 +8,7 @@ import HugeListSmall from '../../components/HugeListSmall';
 import HugeListDouble from '../../components/HugeListDouble';
 import RestList from '../../components/RestList/RestList';
 import AdBanner from '../../components/AdBanner/AdBanner';
+import { StatusBar } from 'expo-status-bar';
 import {images} from '../../constants';
 
 
