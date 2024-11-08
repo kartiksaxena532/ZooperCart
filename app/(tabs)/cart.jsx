@@ -1,18 +1,22 @@
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { View, FlatList, Text, Image, TouchableOpacity,ScrollView } from 'react-native';
-import useWishlistStore from '../../context/WishlistStore';
+import { View, FlatList, Text, Image, TouchableOpacity,ScrollView ,Button} from 'react-native';
 import Photo from '../../components/RestList/Image';
 import { images } from "../../constants";
 import { StatusBar } from 'expo-status-bar';
 import {Svg,Defs ,Path ,Use, G} from 'react-native-svg';
-
+import useCartStore from '../../context/CartStore';
 import { wavyData } from '../../constants/products';
 
 const Cart = () => {
-  const wishlist = useWishlistStore((state) => state.wishlist);
-
+  const cart = useCartStore((state) => state.cart);
+  const addToCart = useCartStore((state) => state.addToCart);
+  const removeFromCart = useCartStore((state) => state.removeFromCart);
+  const updateItemQuantity = useCartStore((state) => state.updateItemQuantity);
+  
   return (
-    <SafeAreaView className="bg-black-100 flex-1 font-pmedium">
+    <>
+    <View className="bg-blue-500 h-10  w-full"></View>
+    <View className="bg-black-100 flex-1 font-pmedium">
     {/* Fixed Header */}
     <View className="bg-blue-500 mb-4">
       <Image 
@@ -41,7 +45,7 @@ const Cart = () => {
     </View>
 
     {/* Conditional Rendering based on Wishlist */}
-    {wishlist.length === 0 ? (
+    {cart.length === 0 ? (
       <View className="flex justify-center h-[70%] items-center">
         <Image 
           source={images.emptyWishlist}
@@ -57,47 +61,35 @@ const Cart = () => {
       </View>
     ) : (
       // Scrollable FlatList below the fixed header
-      <FlatList
-        data={wishlist}
-        keyExtractor={(item, index) => index.toString()}
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ paddingHorizontal: 10 }}
-        renderItem={({ item }) => (
-          <View className="flex flex-row justify-between items-center py-3 px-4 rounded-md">
-            <Photo item={item} />
-            <View className="flex flex-col justify-between">
-              <View className="w-full h-[17vh]">
-                <Text className="text-white text-lg font-semibold font-pbold">
-                  {item.name}
-                </Text>
-                <Text className="text-white text-md font-psemibold">
-                  Price: ${item.price.toFixed(2)}
-                </Text>
-                <Text className="text-yellow-500 text-md font-pthin">
-                  Rating: {item.rating} ⭐
-                </Text>
-                <View className="flex flex-row justify-between">
-                  <Text className="text-white text-sm font-pthin">North Indian</Text>
-                  <Text className="text-yellow-500 text-sm font-pthin">4.5</Text>
-                </View>
-                <View className="flex flex-row justify-between">
-                  <Text className="text-white text-sm font-pthin">Indrapuram</Text>
-                  <Text className="text-yellow-500 text-sm font-pthin">10-20 mins</Text>
-                </View>
-              </View>
-              <TouchableOpacity>
-                <View className="flex justify-center items-center text-center bg-red-500 rounded-full text-md w-[45vw] h-10">
-                  <Text className="text-white text-lg font-pbold">
-                    Extra {Math.floor(Math.random() * (15 - 5)) + 5}% Off
-                  </Text>
-                </View>
-              </TouchableOpacity>
+ 
+      cart.map((item) => (
+        <View key={item.image} className="flex justify-center items-center mt-5">
+          <View className="flex justify-around w-full flex-row items-center">
+          <View className="border-2 border-white rounded-2xl">
+        <Image source={{ uri: item.image }} className="w-[150px] h-[80px] rounded-2xl" />
+        </View>
+        <View className="flex flex-col">
+          <Text className="text-xl text-white font-psemibold">{item.name}</Text>
+          <Text className="text-md text-white font-pregular">Quantity: {item.count}</Text>
+          <View className="flex flex-row gap-3">
+          <TouchableOpacity className="w-20 h-10 flex text-center justify-center rounded-full items-center bg-red-400" onPress={() => removeFromCart(item)}><Text className=" text-white font-pregular">Remove</Text></TouchableOpacity>
+          <TouchableOpacity className="w-7 h-10 flex text-center justify-center items-center rounded-md bg-yellow-400"
+            onPress={() => updateItemQuantity(item, item.count + 1)}
+           ><Text className="font-pbold">+</Text></TouchableOpacity>
+          <TouchableOpacity
+          className="w-7 h-10 flex text-center justify-center items-center rounded-md bg-yellow-400"
+            onPress={() => updateItemQuantity(item, item.count - 1)}
+            ><Text className="font-pbold ">-</Text></TouchableOpacity>
             </View>
           </View>
-        )}
-      />
+          </View>
+        </View>
+      ))
+
     )}
-  </SafeAreaView>
+   
+  </View>
+  </>
   )
 }
 

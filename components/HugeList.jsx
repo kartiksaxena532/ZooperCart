@@ -3,19 +3,24 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
 import {images} from "../constants"
 import Counter from "./Counter/Counter";
+import useCartStore from '../context/CartStore';
 
 const HugeList = ({title,buttonText}) => {
 
   const [isCounterVisibleMap, setIsCounterVisibleMap] = useState({});
+  const addToCart = useCartStore((state) => state.addToCart);
 
-  // Toggle the counter for a specific item using its index
+  const handleAddToCart = (item) => {
+    addToCart(item); // Add the item to the cart when the button is clicked
+  };
+
   const toggleCounterVisibility = (index) => {
     setIsCounterVisibleMap((prev) => ({
       ...prev,
       [index]: !prev[index],
     }));
   };
-  
+
   const products = [
     {
       image: "https://picsum.photos/200/300?random=1",
@@ -319,6 +324,7 @@ const HugeList = ({title,buttonText}) => {
     },
   ];
 
+
   const renderItem = ({ item,index }) => (
     <View className="flex flex-row justify-center items-center">
     <Image source={images.off} className="absolute top-1 left-1 z-10 w-[10vw] h-[5.5vh]" />
@@ -343,10 +349,14 @@ const HugeList = ({title,buttonText}) => {
       </View>
 
       {isCounterVisibleMap[index] ? (
-        <Counter onClose={() => toggleCounterVisibility(index)} />
+     <Counter onClose={() => toggleCounterVisibility(index)} />
       ) : (
         <TouchableOpacity
-          onPress={() => toggleCounterVisibility(index)}
+        onPress={() => {
+            toggleCounterVisibility(index); // Toggle the counter visibility
+            handleAddToCart(item);// Add the item to the cart
+        }}
+    
           className="bg-yellow-300 w-[90%] rounded-lg h-7 py-1"
         >
           <Text className="text-[12px] text-center font-pbold ">{buttonText}</Text>
@@ -362,7 +372,7 @@ const HugeList = ({title,buttonText}) => {
     <FlatList
        data={products}
       renderItem={renderItem}
-      keyExtractor={(_, index) => index.toString()}
+      keyExtractor={(item, index) => index.toString()}
       horizontal
       showsHorizontalScrollIndicator={false}
     />

@@ -29,13 +29,14 @@ const Home = () => {
   const renderItem = ({ item }) => <View>{item.component}</View>;
 
   return (
-    <SafeAreaView className="bg-black-100 flex-1 font-pmedium">
+    <View className="bg-black-100 flex-1 font-pmedium">
+       <View className="bg-black-100 h-10 w-full"></View>
       <FlatList
         data={data}
         renderItem={renderItem}
         keyExtractor={(item) => item.key}
       />
-    </SafeAreaView>
+    </View>
   );
 };
 

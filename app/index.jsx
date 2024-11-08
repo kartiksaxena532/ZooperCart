@@ -11,30 +11,30 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 export default function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-    <SafeAreaView className="bg-primary h-full">
-     <ScrollView contentContainerStyle={{height :'100%'}} >
-<View className="w-full jutify-center items-center min-h-[85vh] px-4">
-<Image source={images.logo} className="w-[90px] h-[90px]" resizeMode='contain'/>
+    <SafeAreaView className="bg-black-100 h-full">
+ 
+<View className="w-full justify-center items-center min-h-[90vh] px-4">
+<Image source={images.logo} className="w-[70px] h-[70px]" resizeMode='contain'/>
 <View className="flex-row">
-<Text className="text-3xl text-yellow-300 font-pbold">Zooper</Text>
-<Text className="text-3xl text-blue-300 font-pbold">Cart</Text>
+<Text className="text-4xl text-yellow-300 font-pbold">Zooper</Text>
+<Text className="text-4xl text-blue-300 font-pbold">Cart</Text>
 </View>
-<Image source={images.cards} className="w-full h-[350px]" resizeMode='contain'/>
+<Image source={images.cards} className="w-full h-[45vh] rounded-full " resizeMode='cover'/>
 <View className="relative">
-<Text className="text-2xl text-white font-pbold text-center">Welcome to <Text className=" text-blue-300">Zooper</Text></Text>
-<Text className="text-2xl text-white font-pbold text-center">Let's Get You A <Text className="text-yellow-300">New Look.</Text></Text>
-<Image source={images.path} className="w-[120px] h-[20px] absolute -bottom-2.5 right-8" resizeMode='contain'/>
+<Text className="text-2xl text-white font-pextrabold text-center">Welcome to <Text className=" text-blue-300">Zooper</Text></Text>
+<Text className="text-xl text-white font-psemibold text-center capitalize">Shop the vibe,<Text className="text-yellow-300 capitalize">own the hype.</Text></Text>
+<Image source={images.path} className="w-[100px] h-[20px] absolute -bottom-3 right-8" resizeMode='contain'/>
 
 </View>
 <View className="mt-6">
-<Text className="text-sm text-slate-100 font-pregular text-center px-4">Where you can buy your favourite products with the best quality and price.</Text>
+<Text className="text-md text-slate-100 font-pregular text-center px-4">Where you can buy your favourites with the best quality and price.</Text>
 </View>
 <CustomButton title="Continue"
 handlePress={()=>router.push('/home')}
 containerStyle="w-full mt-7"
 />
 </View>
-     </ScrollView>
+
      <StatusBar backgroundColor='#161622'  style="light"/>
     </SafeAreaView>
     </GestureHandlerRootView>

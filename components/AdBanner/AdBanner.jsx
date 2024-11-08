@@ -6,7 +6,7 @@ import { wavyData } from '../../constants/products';
 // Update the component to accept an image source as a prop
 const AdBanner = ({ imageSource }) => {
   return (
-    <View className="h-[200px] my-8 w-full flex justify-center items-center">
+    <View className="h-[190px] my-8 w-full flex justify-center items-center">
       
       {/* Display the image if provided */}
       {imageSource ? (

@@ -76,9 +76,9 @@ export default function Modal() {
           {/* <Text className="text-white flex text-lg items-start font-psemibold text-left ml-2">Order History</Text>
        <View className="w-full">
           <SmallCardOrder orders={transactionsData} />
-        </View>*/}
+        </View>
           <View className="flex flex-wrap flex-col justify-between gap-4 my-4 w-[100%]">
-            {/* Row 1: Bar Chart and Line Chart */}
+            {/* Row 1: Bar Chart and Line Chart 
             <View className="flex-1 bg-sky-100 py-4 overflow-hidden rounded-xl items-center justify-center">
               <Text className="text-md font-psemibold">Orders</Text>
               <BarChart
@@ -117,8 +117,11 @@ export default function Modal() {
                 color="#ffffff"
               />
             </View>
+        
           </View>
+          */}
         </View>
+            
       </ScrollView>
     </SafeAreaView>
   );

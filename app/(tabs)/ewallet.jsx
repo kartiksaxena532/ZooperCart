@@ -40,7 +40,6 @@ const Ewallet = () => {
       number: "8587 2945 12331",
       cardname: "MasterCard",
       year: "07 / 1996"
-
     }
   ];
 
@@ -58,7 +57,8 @@ const Ewallet = () => {
   ];
 
   return (
-    <SafeAreaView className="bg-black-100 flex-1 font-pmedium">
+    <View className="bg-black-100 flex-1 font-pmedium">
+       <View className="bg-green-500 h-10  w-full"></View>
       <View className="bg-green-500 h-22">
         <Image
           source={images.wishlistHead} // Replace with your empty state image
@@ -98,7 +98,7 @@ const Ewallet = () => {
           <SmallCard transactions={transactionsData} />
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 

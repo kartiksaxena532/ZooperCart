@@ -54,15 +54,15 @@ const Orders = () => {
     ];
 
     return (
-        <SafeAreaView>
+        <View>
+           <View className="bg-orange-500 h-10  w-full"></View>
            
-            <ScrollView className="flex w-full  bg-black-100 h-[100%] text-white">
 
                 {/* <Text className="text-white flex text-lg items-start font-psemibold text-left ml-2">Order History</Text>
            <View className="w-full">
               <SmallCardOrder orders={transactionsData} />
             </View>*/}
-             <View className="bg-orange-600 h-22">
+             <View className="bg-orange-500 h-22">
         <Image
           source={images.orderHead} // Replace with your empty state image
           className="w-[45px] h-[45px] flex mx-auto mt-1"
@@ -87,8 +87,8 @@ const Orders = () => {
           My Orders
         </Text>
       </View>
+      <ScrollView className="flex w-full bg-black-100 h-[100%] text-white">
                     <View className="flex mx-auto px-8  bg-black-100  overflow-hidden rounded-xl items-center w-full justify-center">
-                   
                         <BarChart
                             data={lineData}
                             spacing={10}
@@ -99,10 +99,11 @@ const Orders = () => {
                             hideYAxisText
                             hideYAxis
                             hideRules
+                            isAnimated={true}
                             yAxisColor="#ffffff"
                             xAxisColor="#ffffff"
                             color="#ffffff"
-                            showLine
+                            barBorderRadius={5}
                             lineConfig={{
                                 color: '#F29C6E',
                                 thickness: 3,
@@ -110,20 +111,47 @@ const Orders = () => {
                                 dataPointsColor: 'white',
                                 textFontSize:15,
                                 textColor:"white",
-                            
+
                               }}
                             xAxisLabelTextStyle={
                                 {
                                     color: 'white',
                                     fontWeight: 'bold',
                                 }
+
+                            }
+                            focusBarOnPress
+                            focusedBarConfig={
+                                {
+                                    color:'white'
+                                }
+                            }
+                            showValuesAsTopLabel
+                            topLabelTextStyle={
+                                {
+                                    color: 'white',
+                                }
                             }
                         />
                     </View>
+                    <View className="flex justify-around items-center flex-row my-6">
+<View className="bg-black-200 shadow-white border-2 border-gray-700 shadow-xl h-20 w-28 items-center flex justify-center rounded-lg ">
+<Text className="text-2xl text-white font-psemibold text-center"> 30% {"\n"}<Text  className="text-sm font-pregular">Discount</Text>
+</Text>
+</View>
+<View className="bg-black-200 shadow-white border-2 border-gray-700 shadow-xl h-20 w-28 items-center flex justify-center rounded-lg ">
+<Text className="text-2xl text-orange-500 font-psemibold text-center"> 300 {"\n"}<Text className="text-white text-sm font-pregular" >Orders</Text>
+</Text>
+</View>
+<View className="bg-black-200 shadow-white border-2 border-gray-700 shadow-xl h-20 w-28 items-center flex justify-center rounded-lg ">
+<Text className="text-2xl text-green-500 font-psemibold text-center"> $30 {"\n"}<Text  className="text-white text-sm font-pregular">Savings</Text>
+</Text>
+</View>
+</View>
 
                 
             </ScrollView>
-        </SafeAreaView>
+        </View>
     );
 }
 

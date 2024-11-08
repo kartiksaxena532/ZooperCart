@@ -12,7 +12,10 @@ const Wishlist = () => {
   const wishlist = useWishlistStore((state) => state.wishlist);
 
   return (
-    <SafeAreaView className="bg-black-100 flex-1 font-pmedium">
+    <>
+      <View className="bg-red-500 h-10  w-full"></View>
+    <View className="bg-black-100 flex-1 font-pmedium">
+      
       {/* Fixed Header */}
       <View className="bg-red-500 mb-4">
         <Image
@@ -97,7 +100,8 @@ const Wishlist = () => {
           )}
         />
       )}
-    </SafeAreaView>
+    </View>
+    </>
   );
 };
 

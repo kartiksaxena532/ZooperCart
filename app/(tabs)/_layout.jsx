@@ -12,7 +12,7 @@ const TabIcon = ({ icon, color, name, focused, height }) => {
         tintColor={color}
         className={`w-${height} h-${height}`}
       />
-      <Text className={`${focused ? 'font-psemibold' : "font-pregular"} text-[12px]  text-white`}>{name}</Text>
+      <Text className={`${focused ? 'font-psemibold' : "font-pregular"} text-[12px] text-white`}>{name}</Text>
     </View>
   )
 }
