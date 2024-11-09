@@ -5,70 +5,23 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import Badge from '../components/Profile/Badge';
 import { StatusBar } from 'expo-status-bar';
 import { BarChart, LineChart, PieChart, PopulationPyramid } from "react-native-gifted-charts";
+import { images } from '../constants';
 
 export default function Modal() {
-  const lineData = [
-    { value: 0, dataPointText: '0' },
-    {
-      value: 20, dataPointText: '20', label: 'M', topLabelComponent: () => (
-        <Text style={{ color: 'blue', fontSize: 18, marginBottom: 6 }}>10</Text>
-      ),
-    },
-    {
-      value: 18, dataPointText: '18', label: 'T', topLabelComponent: () => (
-        <Text style={{ color: 'blue', fontSize: 18, marginBottom: 6 }}>9</Text>
-      ),
-    },
-    {
-      value: 40, dataPointText: '40', label: 'W', topLabelComponent: () => (
-        <Text style={{ color: 'blue', fontSize: 18, marginBottom: 6 }}>15</Text>
-      ),
-    },
-    {
-      value: 36, dataPointText: '36', label: 'T', topLabelComponent: () => (
-        <Text style={{ color: 'blue', fontSize: 18, marginBottom: 6 }}>14</Text>
-      ),
-    },
-    {
-      value: 60, dataPointText: '60', label: 'F', topLabelComponent: () => (
-        <Text style={{ color: 'blue', fontSize: 18, marginBottom: 6 }}>20</Text>
-      ),
-    },
-    {
-      value: 54, dataPointText: '54', label: 'S', topLabelComponent: () => (
-        <Text style={{ color: 'blue', fontSize: 18, marginBottom: 6 }}>18</Text>
-      ),
-    },
-    {
-      value: 70, dataPointText: '85', label: 'S', topLabelComponent: () => (
-        <Text style={{ color: 'blue', fontSize: 18, marginBottom: 6 }}>30</Text>
-      ),
-    }
-  ];
-  const transactionsData = [
-    { id: 1, date: '2024-11-01', amount: 120.5, description: 'Grocery Shopping', type: 'debit', cardname: 'MasterCard' },
-    { id: 2, date: '2024-11-02', amount: 500.0, description: 'Salary', type: 'credit', cardname: 'Visa' },
-    { id: 3, date: '2024-11-03', amount: 30.75, description: 'Coffee Shop', type: 'debit', cardname: 'MasterCard' },
-    { id: 4, date: '2024-11-01', amount: 120.5, description: 'Grocery Shopping', type: 'debit', cardname: 'AMEX' },
-    { id: 5, date: '2024-11-02', amount: 500.0, description: 'Salary', type: 'credit', cardname: 'Visa' },
-    { id: 6, date: '2024-11-03', amount: 30.75, description: 'Coffee Shop', type: 'debit', cardname: 'MasterCard' },
-    { id: 7, date: '2024-11-01', amount: 120.5, description: 'Grocery Shopping', type: 'debit', cardname: 'Visa' },
-    { id: 8, date: '2024-11-02', amount: 500.0, description: 'Salary', type: 'credit', cardname: 'MasterCard' },
-    { id: 9, date: '2024-11-03', amount: 30.75, description: 'Coffee Shop', type: 'debit', cardname: 'AMEX' },
-  ];
-
+ 
   return (
     <SafeAreaView>
       <StatusBar style="auto" />
       <ScrollView className="flex flex-col  bg-black-100 h-[100%] px-2 text-white">
         <ProfileNavbar />
-        <View className="flex ">
+        <View className="flex">
           <View className="flex mx-auto border-4 border-yellow-500 rounded-full w-[150px] h-[150px] items-center  overflow-hidden" sharedTransitionTag="sharedTag">
             <Image source={{ uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.4i-az-sgn-Dogg2UTH6sMgHaFS%26pid%3DApi&f=1&ipt=86196ef3c123995791c32c54e7c8335925f0e1688d9e5a7660112f24265325b2&ipo=images" }} className="h-[150px] w-[150px] rounded-full" />
           </View>
           <Text className="font-psemibold text-3xl mx-auto text-white my-2">Kartik Saxena</Text>
-          <Text className="font-pregular text-xs text-white my-2 mx-3 text-center">Newly joining the revolution of quickcommerce gives you an unfair advantage over everbody else.</Text>
-          <View className="flex flex-row justify-center gap-3 my-2 ">
+          <Text className="font-pregular text-xs text-white my-2 mx-3 text-center">Joined 2023</Text>
+          <Text className="font-pregular text-xs text-white my-2 mx-3 text-center">Newly joining the revolution of quick-commerce gives you an unfair advantage over everbody else.</Text>
+          <View className="flex flex-row justify-evenly my-2 ">
             <Badge label="Foodie" />
             <Badge label="Premium" />
             <Badge label="Newcomer" />
@@ -119,7 +72,42 @@ export default function Modal() {
             </View>
         
           </View>
+        
           */}
+            <View className="border-[3px] border-gray-800 rounded-xl mt-4 py-4 ">
+          <View className="flex justify-center items-center mx-3 border-b-[1px] mb-2 border-gray-800">
+            <View className="flex flex-row items-center justify-between w-full  px-2 py-4 rounded-[12px]">
+            <Image source={images.logo} className="w-10 h-10 rounded-full" /> 
+            <Text className="font-psemibold  text-white text-lg ">Address</Text>
+            <Image source={images.downArrow} className="w-6 h-6 rounded-full -rotate-90" />
+            </View>
+          </View>
+
+
+          <View className="flex justify-center items-center mx-3 border-b-[1px]  border-gray-800">
+            <View className="flex flex-row items-center justify-between w-full px-2 py-4 rounded-[12px]">
+            <Image source={images.logo} className="w-10 h-10 rounded-full" /> 
+            <Text className="font-psemibold  text-white text-lg">Address</Text>
+            <Image source={images.downArrow} className="w-6 h-6 rounded-full -rotate-90" />
+            </View>
+          </View>
+
+          <View className="flex justify-center items-center mx-3 border-b-[1px] my-2 border-gray-800">
+            <View className="flex flex-row items-center justify-between w-full  px-2 py-4 rounded-[12px]">
+            <Image source={images.logo} className="w-10 h-10 rounded-full" /> 
+            <Text className="font-psemibold  text-white text-lg ">Address</Text>
+            <Image source={images.downArrow} className="w-6 h-6 rounded-full -rotate-90" />
+            </View>
+          </View>
+
+          <View className="flex justify-center items-center mx-3 mt-2 border-gray-800">
+            <View className="flex flex-row items-center justify-between w-full  px-2 py-2 rounded-[12px]">
+            <Image source={images.logo} className="w-10 h-10 rounded-full" /> 
+            <Text className="font-psemibold  text-white text-lg ">Address</Text>
+            <Image source={images.downArrow} className="w-6 h-6 rounded-full -rotate-90" />
+            </View>
+          </View>
+          </View>
         </View>
             
       </ScrollView>

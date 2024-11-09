@@ -11,6 +11,8 @@
   "dependencies": {
     "@react-navigation/native": "^6.1.18",
     "@react-navigation/native-stack": "^6.11.0",
+    "@react-three/drei": "^9.115.0",
+    "@react-three/fiber": "^8.17.10",
     "@types/react": "~18.2.45",
     "expo": "^51.0.38",
     "expo-constants": "~16.0.2",
@@ -19,6 +21,7 @@
     "expo-status-bar": "~1.12.1",
     "nativewind": "^2.0.11",
     "react": "18.2.0",
+    "react-dom": "18.2.0",
     "react-native": "0.74.5",
     "react-native-appwrite": "^0.2.2",
     "react-native-drawer-layout": "^3.3.2",
@@ -32,10 +35,10 @@
     "react-native-svg": "^15.8.0",
     "react-native-swiper": "^1.6.0",
     "react-native-url-polyfill": "^2.0.0",
-    "typescript": "^5.3.3",
-    "zustand": "^5.0.1",
     "react-native-web": "~0.19.10",
-    "react-dom": "18.2.0"
+    "three": "^0.170.0",
+    "typescript": "^5.3.3",
+    "zustand": "^5.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
