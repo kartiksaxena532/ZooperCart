@@ -48,8 +48,8 @@ const [fontsLoaded, error]= useFonts({
           headerShown:  false
         }}
       />
-        {/*
-         <Stack.Screen name="/search/[query]" options={{headerShown:  false}} />*/}
+         <Stack.Screen name="product/[name]" options={{headerShown:  false}} />
+         <Stack.Screen name="category/[name]" options={{headerShown:  false}} />
       </Stack>
   )
 }

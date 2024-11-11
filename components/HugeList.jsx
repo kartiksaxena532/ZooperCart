@@ -1,5 +1,6 @@
 import { FlatList, TouchableOpacity, View, Text, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { Link } from "expo-router";
 import { useState } from "react";
 import {images} from "../constants"
 import Counter from "./Counter/Counter";
@@ -326,6 +327,7 @@ const HugeList = ({title,buttonText}) => {
 
 
   const renderItem = ({ item,index }) => (
+    <Link href={`/product/${item.name}`}>
     <View className="flex flex-row justify-center items-center">
     <Image source={images.off} className="absolute top-1 left-1 z-10 w-[10vw] h-[5.5vh]" />
     <Text className="absolute text-black-100 text-start px-1 top-2 left-2 z-[99] font-psemibold text-[10px]">
@@ -364,6 +366,7 @@ const HugeList = ({title,buttonText}) => {
       )}
     </View>
   </View>
+  </Link>
   );
 
   return (

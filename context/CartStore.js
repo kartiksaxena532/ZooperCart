@@ -28,6 +28,9 @@ const useCartStore = create((set) => ({
   removeFromCart: (item) => set((state) => ({
     cart: state.cart.filter((cartItem) => cartItem.image !== item.image),
   })),
+
+
+
   updateQuantity: (id, quantity) => {
     set((state) => {
       const updatedCart = state.cart.map((item) =>
@@ -37,15 +40,17 @@ const useCartStore = create((set) => ({
     });
   },
   // Update the quantity of an item in the cart
-  updateItemQuantity: (item, quantity) => set((state) => {
-    return {
-      cart: state.cart.map((cartItem) =>
+ updateItemQuantity: (item, quantity) => set((state) => {
+  return {
+    cart: state.cart
+      .map((cartItem) =>
         cartItem.image === item.image
-          ? { ...cartItem, count: Math.max(quantity, 1) } // Ensure quantity is at least 1
+          ? { ...cartItem, count: Math.max(quantity, 0) }
           : cartItem
-      ),
-    };
-  }),
+      )
+      .filter((cartItem) => cartItem.count > 0), // Remove items with count <= 0
+  };
+}),
 
   // Get the total number of items in the cart
   getTotalItems: () => {
