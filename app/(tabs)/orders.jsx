@@ -7,7 +7,7 @@ import { StatusBar } from 'expo-status-bar';
 import { BarChart, LineChart, PieChart, PopulationPyramid } from "react-native-gifted-charts";
 import { images } from "../../constants"
 import { Svg, Defs, Path, Use, G } from 'react-native-svg';
-
+import SmallCardOrder from '../../components/Profile/SmallCardOrder';
 import { wavyData } from '../../constants/products';
 
 const Orders = () => {
@@ -41,6 +41,8 @@ const Orders = () => {
             value: 70, dataPointText: '85', label: 'S'
         }
     ];
+
+
     const transactionsData = [
         { id: 1, date: '2024-11-01', amount: 120.5, description: 'Grocery Shopping', type: 'debit', cardname: 'MasterCard' },
         { id: 2, date: '2024-11-02', amount: 500.0, description: 'Salary', type: 'credit', cardname: 'Visa' },
@@ -58,10 +60,7 @@ const Orders = () => {
            <View className="bg-orange-500 h-10  w-full"></View>
            
 
-                {/* <Text className="text-white flex text-lg items-start font-psemibold text-left ml-2">Order History</Text>
-           <View className="w-full">
-              <SmallCardOrder orders={transactionsData} />
-            </View>*/}
+               
              <View className="bg-orange-500 h-22">
         <Image
           source={images.orderHead} // Replace with your empty state image
@@ -149,6 +148,12 @@ const Orders = () => {
 </View>
 </View>
 
+ <Text className="text-white flex text-lg items-start font-psemibold text-left ml-2">Order History</Text>
+
+         { /*<View className="w-full">
+              <SmallCardOrder />
+            </View>
+            */}
                 
             </ScrollView>
         </View>

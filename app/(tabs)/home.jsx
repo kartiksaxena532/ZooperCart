@@ -10,6 +10,7 @@ import RestList from '../../components/RestList/RestList';
 import AdBanner from '../../components/AdBanner/AdBanner';
 import { StatusBar } from 'expo-status-bar';
 import {images} from '../../constants';
+import Cards from '../../components/Home/Cards';
 
 
 const Home = () => {
@@ -24,6 +25,7 @@ const Home = () => {
     { key:'adbanner2', component:<AdBanner imageSource={images.banner2} />},
     { key: 'restList', component: <RestList /> },
     { key:'adbanner3', component:<AdBanner imageSource={images.banner3} />},
+    {key:'card', component: <Cards title="Only For Kartik"/>}
   ];
 
   const renderItem = ({ item }) => <View>{item.component}</View>;

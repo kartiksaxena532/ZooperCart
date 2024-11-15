@@ -16,6 +16,7 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+
     "ios": {
       "supportsTablet": true,
       "package": "com.deepak.opticals"

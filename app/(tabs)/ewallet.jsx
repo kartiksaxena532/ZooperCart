@@ -7,6 +7,7 @@ import { Svg, Defs, Path, Use, G } from 'react-native-svg';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import CardContainer from '../../components/EwalletCard/CardContainer';
 import SmallCard from '../../components/EwalletCard/SmallCard';
+import { Link } from 'expo-router';
 import { wavyData } from '../../constants/products';
 
 
@@ -58,7 +59,7 @@ const Ewallet = () => {
 
   return (
     <View className="bg-black-100 flex-1 font-pmedium">
-       <View className="bg-green-500 h-10  w-full"></View>
+      <View className="bg-green-500 h-10  w-full"></View>
       <View className="bg-green-500 h-22">
         <Image
           source={images.wishlistHead} // Replace with your empty state image
@@ -89,15 +90,18 @@ const Ewallet = () => {
           <CardContainer data={data} maxVisibleItems={3} />
         </SafeAreaView>
       </GestureHandlerRootView>
-      <TouchableOpacity>
-        <Text className="text-md text-blue-300 text-center -mt-8 font-pregular">Add A Card</Text>
+      <TouchableOpacity >
+        <Link href="(card)/addCard" className='justify-center flex items-center text-center -mt-14'>
+          <Text className="text-md text-blue-300 text-center font-pregular ">Add A Card</Text>
+        </Link>
       </TouchableOpacity>
-      <View className="flex-[0.6] ">
+      {/*  <View className="flex-[0.6] ">
         <Text className="text-white text-lg ml-3 font-pmedium text-left ">Transaction History</Text>
-        <View className="px-2 mb-20">
+      <View className="px-2 mb-20">
           <SmallCard transactions={transactionsData} />
-        </View>
-      </View>
+        </View> 
+      </View>*/}
+
     </View>
   );
 }
