@@ -54,7 +54,7 @@ const Ewallet = () => {
     { id: 7, date: '2024-11-01', amount: 120.5, description: 'Grocery Shopping', type: 'debit', cardname: 'Visa' },
     { id: 8, date: '2024-11-02', amount: 500.0, description: 'Salary', type: 'credit', cardname: 'MasterCard' },
     { id: 9, date: '2024-11-03', amount: 30.75, description: 'Coffee Shop', type: 'debit', cardname: 'AMEX' },
-    // Add more transactions as needed
+
   ];
 
   return (
@@ -95,12 +95,12 @@ const Ewallet = () => {
           <Text className="text-md text-blue-300 text-center font-pregular ">Add A Card</Text>
         </Link>
       </TouchableOpacity>
-      {/*  <View className="flex-[0.6] ">
-        <Text className="text-white text-lg ml-3 font-pmedium text-left ">Transaction History</Text>
-      <View className="px-2 mb-20">
+      <View className="flex-[0.6]">
+        <Text className="text-white text-lg ml-3 font-pmedium text-left">Transaction History</Text>
+        <View className="px-2 mb-20">
           <SmallCard transactions={transactionsData} />
-        </View> 
-      </View>*/}
+        </View>
+      </View>
 
     </View>
   );

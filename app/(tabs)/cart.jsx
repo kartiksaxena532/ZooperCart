@@ -67,25 +67,27 @@ const Cart = () => {
                       <Text className="text-md text-white font-psemibold"
                        numberOfLines={1}
               ellipsizeMode="tail">{cart.title}</Text>
+              <View className="flex flex-row justify-between">
                       <Text className="text-xs text-white font-pregular">Quantity: {cart.quantity}</Text>
-                      <Text className="text-xs text-white font-pregular">Price: ₹ {cart.price}</Text>
-                      <View className="flex flex-row gap-3">
-                        <TouchableOpacity className="w-16 h-8 flex text-center justify-center rounded-full items-center bg-red-400" onPress={() => removeFromCart(cart.id)}>
+                      <Text className="text-xs mb-1 text-white font-pregular">Price: ₹ {cart.price}</Text>
+                      </View>
+                      <View className="flex flex-row gap-3 items-center">
+                        <TouchableOpacity className="w-14 h-6 flex text-center justify-center rounded-full items-center bg-red-400" onPress={() => removeFromCart(cart.id)}>
                           <Text className="text-white text-xs font-pregular">Remove</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
-                          className="w-7 h-8 flex text-center justify-center items-center rounded-md bg-yellow-400"
+                          className="w-6 h-6 flex text-center justify-center items-center rounded-full bg-yellow-400"
                           onPress={() => increaseQuantity(cart.id, cart.id.quantity + 1)}
                         >
-                          <Text className="font-pbold">+</Text>
+                          <Text className="font-pbold text-center">+</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
-                          className="w-7 h-8 flex text-center justify-center items-center rounded-md bg-yellow-400"
+                          className="w-6 h-6 flex text-center justify-center items-center rounded-full bg-yellow-400"
                           onPress={() => decreaseQuantity(cart.id, cart.id.quantity - 1)}
                         >
                           <Text className="font-pbold">-</Text>
                         </TouchableOpacity>
-                        <Text className="text-md text-white font-pregular">Total: ₹ {cost}</Text>
+                        <Text className="text-xs text-white font-pregular">Total: ₹ {cost}</Text>
                       </View>
                     </View>
                   </View>
