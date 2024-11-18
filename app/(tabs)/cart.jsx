@@ -73,7 +73,7 @@ const Cart = () => {
                       </View>
                       <View className="flex flex-row gap-3 items-center">
                         <TouchableOpacity className="w-14 h-6 flex text-center justify-center rounded-full items-center bg-red-400" onPress={() => removeFromCart(cart.id)}>
-                          <Text className="text-white text-xs font-pregular">Remove</Text>
+                          <Text className="text-white text-[9px] font-pregular">Remove</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
                           className="w-6 h-6 flex text-center justify-center items-center rounded-full bg-yellow-400"
@@ -96,8 +96,11 @@ const Cart = () => {
             }}
           />
         )}
-         <Text className="text-md text-white font-pregular">Total: ₹ {totalCost}</Text>
-        <Button title="Clear Cart" onPress={clearCart} />
+        <View className="flex mt-16 mb-4 justify-between items-center flex-row px-3 ">
+    
+        <TouchableOpacity className="w-[20vw] py-1 rounded-full bg-red-500 flex justify-center items-center" onPress={clearCart}><Text className="font-psemibold text-white">Clear</Text></TouchableOpacity>
+        <Text className="text-md text-white text-md  font-pregular">Total  : ₹ {totalCost}</Text>
+        </View>
       </View>
     </>
   );

@@ -35,15 +35,21 @@ const useCartStore = create(
         ),
       })),
 
-      decreaseQuantity: (id) => set((state) => ({
-        carts: state.carts
-          .map((item) =>
-            item.id === id && item.quantity > 1
-              ? { ...item, quantity: item.quantity - 1 }
-              : item
+      decreaseQuantity: (id) => set((state) => {
+        const updatedCarts = state.carts
+          .map((item) => 
+            item.id === id ? { ...item, quantity: item.quantity - 1 } : item
           )
-          .filter((item) => item.quantity > 0),
-      })),
+          .filter((item) => item.quantity > 0);
+      
+        // If the item is completely removed (quantity < 1), trigger `removeFromCart`
+        if (!updatedCarts.some((item) => item.id === id)) {
+          state.removeFromCart(id);
+        }
+      
+        return { carts: updatedCarts };
+      }),
+      
 
       getTotalCost: () => {
         const carts = get().carts;
