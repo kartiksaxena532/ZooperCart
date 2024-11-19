@@ -72,6 +72,7 @@ const HugeList = ({ title, buttonText }) => {
               onClose={() => toggleCounterVisibility(index)}
               product={product}
               quantity={carts.find((item) => item.id === product.id)?.quantity || 0}
+              text={buttonText}
             />
           ) : (
             <TouchableOpacity

@@ -91,7 +91,7 @@ const Ewallet = () => {
         </SafeAreaView>
       </GestureHandlerRootView>
       <TouchableOpacity >
-        <Link href="(card)/addCard" className='justify-center flex items-center text-center -mt-14'>
+        <Link href="(card)/addCard" className='justify-center flex items-center text-center -mt-6'>
           <Text className="text-md text-blue-300 text-center font-pregular ">Add A Card</Text>
         </Link>
       </TouchableOpacity>
