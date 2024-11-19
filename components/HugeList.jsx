@@ -43,14 +43,14 @@ const HugeList = ({ title, buttonText }) => {
   const renderItem = ({ item: product, index }) => (
     <Link href={`/product/${product.id}`}>
       <View className="flex-grow flex-row justify-between items-stretch h-[22vh]">
-        <Image source={images.off} className="absolute top-1 left-1 z-10 w-[10vw] h-[5.5vh]" />
+        <Image source={images.off} className="absolute top-1 left-1 z-10 w-[10vw] h-[5.5vh]"/>
         <Text className="absolute text-black-100 text-start px-1 top-2 left-2 z-[99] font-psemibold text-[10px]">
           {Math.floor(Math.random() * (15 - 5)) + 5}% {"\n"} Off
         </Text>
 
-        <View className="flex flex-col py-2 ml-3 justify-start bg-transparent ring-1 ring-slate-500 h-[23vh] w-[28vw] rounded-lg">
+        <View className="flex flex-col py-2 ml-3 justify-start bg-transparent ring-1 ring-slate-500 h-[23vh] w-[24vw] rounded-lg">
           <View className="shadow-md shadow-white border-[0.5px] border-white rounded-md">
-            <Image source={{ uri: product.thumbnail }} className="w-full h-[70px] rounded-md" />
+            <Image source={{ uri: product.thumbnail }} className="w-full h-[70px] rounded-md bg-black-100" resizeMode="contain" />
           </View>
 
           <View className="flex flex-row items-center">

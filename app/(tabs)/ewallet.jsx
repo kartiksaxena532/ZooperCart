@@ -15,7 +15,7 @@ const Ewallet = () => {
   const data = [
     {
       index: 10,
-      image: require('../../assets/amex.png'),
+      image: "https://res.cloudinary.com/dpddig4nw/image/upload/v1732013509/amex_dqjklk.png",
       bgvalue: "bg-blue-500",
       name: "Kartik Saxena",
       number: "7587 8845 12331",
@@ -26,7 +26,7 @@ const Ewallet = () => {
     },
     {
       index: 11,
-      image: require('../../assets/visa.png'),
+      image: "https://res.cloudinary.com/dpddig4nw/image/upload/v1732013509/visa_znyp1k.png",
       bgvalue: "bg-yellow-600",
       name: "Kartik Saxena",
       number: "7587 8845 12331",
@@ -35,7 +35,7 @@ const Ewallet = () => {
     },
     {
       index: 12,
-      image: require('../../assets/master.png'),
+      image: "https://res.cloudinary.com/dpddig4nw/image/upload/v1732013509/master_lmhagz.png",
       bgvalue: "bg-gray-500",
       name: "Kartik Saxena",
       number: "8587 2945 12331",

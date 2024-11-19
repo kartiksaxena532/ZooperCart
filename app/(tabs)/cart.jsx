@@ -51,6 +51,7 @@ const Cart = () => {
           </View>
         ) : (
           // Scrollable FlatList below the fixed header
+          <>
           <FlatList
             data={carts}
             keyExtractor={(item) => item.id.toString()}
@@ -60,16 +61,16 @@ const Cart = () => {
               return (
                 <View key={cart.id} className="flex justify-center items-center mt-5">
                   <View className="flex justify-around w-full flex-row items-center">
-                    <View className="border-2 border-white rounded-2xl">
-                      <Image source={{ uri: cart.thumbnail }} className="w-[100px] h-[80px] rounded-2xl" />
+                    <View className="border-2 border-white rounded-md">
+                      <Image source={{ uri: cart.thumbnail }} className="w-[60px] h-[60px] rounded-xs" />
                     </View>
                     <View className="flex flex-col">
-                      <Text className="text-md text-white font-psemibold"
+                      <Text className="text-xs text-white font-psemibold"
                        numberOfLines={1}
               ellipsizeMode="tail">{cart.title}</Text>
               <View className="flex flex-row justify-between">
-                      <Text className="text-xs text-white font-pregular">Quantity: {cart.quantity}</Text>
-                      <Text className="text-xs mb-1 text-white font-pregular">Price: ₹ {cart.price}</Text>
+                      <Text className="text-[9px] text-white font-pregular">Quantity: {cart.quantity}</Text>
+                      <Text className=" text-[9px] mb-1 text-white font-pregular">Price: ₹ {cart.price}</Text>
                       </View>
                       <View className="flex flex-row gap-3 items-center">
                         <TouchableOpacity className="w-14 h-6 flex text-center justify-center rounded-full items-center bg-red-400" onPress={() => removeFromCart(cart.id)}>
@@ -95,12 +96,13 @@ const Cart = () => {
               );
             }}
           />
+          <View className="flex mt-1 mb-4 justify-between items-center flex-row px-3 ">
+          <TouchableOpacity className="w-[20vw] py-1 rounded-full bg-red-500 flex justify-center items-center" onPress={clearCart}><Text className="font-psemibold text-white">Clear</Text></TouchableOpacity>
+          <Text className="text-md text-white text-md  font-pregular">Total  : ₹ {totalCost}</Text>
+          </View>
+          </>
         )}
-        <View className="flex mt-16 mb-4 justify-between items-center flex-row px-3 ">
-    
-        <TouchableOpacity className="w-[20vw] py-1 rounded-full bg-red-500 flex justify-center items-center" onPress={clearCart}><Text className="font-psemibold text-white">Clear</Text></TouchableOpacity>
-        <Text className="text-md text-white text-md  font-pregular">Total  : ₹ {totalCost}</Text>
-        </View>
+     
       </View>
     </>
   );

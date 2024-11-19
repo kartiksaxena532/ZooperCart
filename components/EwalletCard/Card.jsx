@@ -98,7 +98,7 @@ const Card = ({
                 ><View className="flex w-full justify-between h-full items-center px-3 text-white">
                         <Text className="text-9xl opacity-20 absolute right-2 leading-tight font-pbold text-white">{item.index}</Text>
                         <View className="flex w-full justify-between flex-row mt-2">
-                            <Image source={item.image} className="w-[31vw] h-[9vh]" resizeMode="contain"  />
+                            <Image source={{uri:item.image}} className="w-[31vw] h-[9vh]" resizeMode="contain"  />
                         </View>
                         <View className="-mb-4">
                             <Text className="text-3xl leading-tight font-pbold text-white">{item.cardname}</Text>

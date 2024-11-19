@@ -44,13 +44,19 @@ const Products = () => {
   return (
     <SafeAreaView className="bg-black-100 h-full w-full px-2 justify-around">
       <ProfileNavbar />
-      <View className="border-2 border-white rounded-lg">
-        <Image source={{ uri: product.thumbnail }} className="w-full h-[30vh] border-2 border-white rounded-lg" />
+      <View className="border-2 border-white rounded-lg flex justify-center items-center w-[25vw] mx-auto">
+        <Image source={{ uri: product.thumbnail }} className="w-[25vw] h-[10vh] border-2 border-white rounded-lg" />
       </View>
       <Text className="text-2xl text-white font-psemibold text-center ">{product.title}</Text>
+      < View className="gap-4">
       <View className="flex flex-row justify-around">
-        <Text className="text-lg text-white font-psemibold text-center ">Reviews: {product.rating} ⭐</Text>
-        <Text className="text-lg text-white font-psemibold text-center " >Price : $ {product.price}</Text>
+        <Text className="text-md text-white font-psemibold text-center ">Reviews: {product.rating} ⭐</Text>
+        <Text className="text-md text-white font-psemibold text-center " >Price : $ {product.price}</Text>
+      </View>
+      <View className="flex flex-row justify-around">
+        <Text className="text-sm text-white font-pregular text-center ">{product.shippingInformation}</Text>
+        <Text className="text-sm text-white font-pregular text-center " >Stock : {product.stock} units</Text>
+      </View>
       </View>
       <Text className="text-sm text-white font-pregular text-justify " >{product.description}</Text>
       <Link href="/cart" className="w-full text-lg text-center text-black font-pbold bg-yellow-400 rounded-xl py-4 my-4 " onPress={() => {
