@@ -100,7 +100,7 @@ const Card = ({
                         <View className="flex w-full justify-between flex-row mt-2">
                             <Image source={{uri:item.image}} className="w-[31vw] h-[9vh]" resizeMode="contain"  />
                         </View>
-                        <View className="-mb-4">
+                        <View className="-mb-4"> 
                             <Text className="text-3xl leading-tight font-pbold text-white">{item.cardname}</Text>
                         </View>
                         <Text className="font-psemibold text-gray-800 text-xl">{item.number}</Text>
