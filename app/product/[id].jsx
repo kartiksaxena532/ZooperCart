@@ -47,8 +47,8 @@ const Products = () => {
 
 
   return (
-    <ScrollView className="bg-black-100 h-full w-full pt-8 ">
-      <StatusBar style="light" />
+    <ScrollView className="bg-black-100 h-full w-full pt-5 ">
+      <StatusBar backgroundColor="#ffffff"/>
       <View className="h-4 w-4 bg-red-600 absolute right-3 top-4 rounded-full items-center justify-center z-[99]">
         <Text className="text-white font-pbold text-[10px]">
           {TotalQuantity}</Text></View>
@@ -62,7 +62,7 @@ const Products = () => {
         </Link>
       </View>
       <View className=" rounded-lg w-[full] items-center">
-        <Image source={{ uri: product.thumbnail }} className="w-[100vw] h-[35vh] rounded-b-3xl bg-white " resizeMode='contain' />
+        <Image source={{ uri: product.thumbnail }} className="w-[100vw] h-[26vh] rounded-b-3xl bg-white " resizeMode='contain' />
         <View className="bg-yellow-300 rounded-full w-14 h-14 items-center justify-center absolute right-4 -bottom-5">
           <Image source={images.heart} className="w-[8vw] h-[4vh] " />
         </View>
@@ -78,17 +78,33 @@ const Products = () => {
             <Text className="text-sm text-white/70 font-pregular text-left my-2 ">{product.rating} ⭐ Rating On This Product</Text>
           </View>
           <View className="flex flex-row  justify-evenly">
-            <Text className="text-xs text-white font-pthin text-left ">{product.shippingInformation}</Text>
-            <Text className="text-xs text-white font-pthin text-left " >Stock : {product.stock} units</Text>
+            <Text className="text-[11px] text-white font-pthin text-left ">{product.shippingInformation}</Text>
+            <Text className="text-[11px] text-white font-pthin text-left " >{product.stock} units</Text>
+            <Text className="text-[11px] text-white font-pthin text-left">
+            {product.returnPolicy}
+          </Text>
           </View>
         </View>
         <Link href="/cart" className="w-full text-lg text-center text-black font-pbold bg-yellow-400 rounded-xl py-4 my-4 " onPress={() => {
           addToCart(product);
         }}>
           <Text className="text-psemibold">Proceed To Buy</Text></Link>
-
         <Text className="text-sm text-white font-pthin text-justify my-4" >{product.description}</Text>
-
+        <View className="mb-10">
+          <Text className="text-sm text-white font-psemibold text-left">Reviews</Text>
+      {product.reviews.map((review, index) => (
+        <View key={index} className="my-1 flex-col border border-gray-700 rounded-lg p-2">
+          <Text className="text-sm text-white font-pthin text-justify">
+            {review.comment}
+          </Text>
+          <View className="flex-row justify-between">
+            <Text className="text-xs text-gray-400">{review.rating} ⭐</Text>
+          <Text className="text-xs text-gray-400">- {review.reviewerName}</Text>
+          </View>
+        </View>
+      ))}
+    </View>
+   
       </SafeAreaView>
     </ScrollView>
   )

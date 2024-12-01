@@ -1,7 +1,9 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { View, FlatList, Text, Image, TouchableOpacity } from 'react-native';
 import useWishlistStore from '../../context/WishlistStore';
-import Photo from '../../components/RestList/Image';
+import useProductStore from '../../context/useProductStore';
+import useCartStore from '../../context/useCartStore';
+import Photo from '../../components/RestList/Photu';
 import { images } from "../../constants";
 import { StatusBar } from 'expo-status-bar';
 import { Svg, Defs, Path, Use, G } from 'react-native-svg';
@@ -10,6 +12,8 @@ import { wavyData } from '../../constants/products';
 
 const Wishlist = () => {
   const wishlist = useWishlistStore((state) => state.wishlist);
+  const { products, loading, error, fetchProducts } = useProductStore();
+  const { addToCart, decreaseQuantity, increaseQuantity, removeFromCart, carts } = useCartStore();
 
   return (
     <>
@@ -69,29 +73,21 @@ const Wishlist = () => {
             <View className="flex flex-row justify-between items-center py-3 px-4 rounded-md">
               <Photo item={item} />
               <View className="flex flex-col justify-between">
-                <View className="w-full h-[17vh]">
-                  <Text className="text-white text-lg font-semibold font-pbold">
+                <View className="w-full h-[9vh]">
+                  <Text className="text-white text-md font-semibold font-pbold">
                     {item.name}
                   </Text>
-                  <Text className="text-white text-md font-psemibold">
+                  <Text className="text-white text-sm font-psemibold">
                     Price: ${item.price.toFixed(2)}
                   </Text>
-                  <Text className="text-yellow-500 text-md font-pthin">
+                  <Text className="text-yellow-500 text-xs font-pthin">
                     Rating: {item.rating} ⭐
                   </Text>
-                  <View className="flex flex-row justify-between">
-                    <Text className="text-white text-sm font-pthin">North Indian</Text>
-                    <Text className="text-yellow-500 text-sm font-pthin">4.5</Text>
-                  </View>
-                  <View className="flex flex-row justify-between">
-                    <Text className="text-white text-sm font-pthin">Indrapuram</Text>
-                    <Text className="text-yellow-500 text-sm font-pthin">10-20 mins</Text>
-                  </View>
                 </View>
                 <TouchableOpacity>
-                  <View className="flex justify-center items-center text-center bg-red-500 rounded-full text-md w-[45vw] h-10">
-                    <Text className="text-white text-lg font-pbold">
-                      Extra {Math.floor(Math.random() * (15 - 5)) + 5}% Off
+                  <View className="flex justify-center items-center text-center bg-red-500 rounded-full text-md w-[40vw] h-8">
+                    <Text className="text-white text-xs font-pbold">
+                     Add To Cart
                     </Text>
                   </View>
                 </TouchableOpacity>

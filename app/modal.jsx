@@ -11,7 +11,7 @@ export default function Modal() {
  
   return (
     <SafeAreaView>
-      <StatusBar style="auto" />
+   <StatusBar backgroundColor="#1e1e2d"/>
       <ScrollView className="flex flex-col  bg-black-100 h-[100%] px-2 text-white">
         <ProfileNavbar />
         <View className="flex">

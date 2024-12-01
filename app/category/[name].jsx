@@ -5,9 +5,10 @@ import ProfileNavbar from '../../components/Profile/ProfileNavbar';
 import categoryData from '../../constants/category';
  
 const Category = () => {
+  
     const { name } = useLocalSearchParams();
     const selectedCategory = categoryData.find((c) => c.name.toString() === name); 
-  
+    
     if (!selectedCategory) {
       return <Text>Category not found</Text>;
     }
