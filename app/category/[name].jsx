@@ -21,6 +21,7 @@ const Category = () => {
           <Image source={selectedCategory.image} className=" border-2 border-white rounded-lg" />
         </View>
         <Text className="text-2xl text-white font-psemibold text-center ">{selectedCategory.name}</Text>
+        <Text className="text-2xl text-white font-psemibold text-center ">{selectedCategory.name}</Text>
         <Link href="/cart" className="w-full text-lg text-center text-black font-pbold bg-yellow-400 rounded-xl py-4 my-4">Proceed To Buy</Link>
         </View>
       </SafeAreaView>
