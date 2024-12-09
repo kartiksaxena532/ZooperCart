@@ -197,8 +197,6 @@ Contributions are welcome! Please fork the repository, make your changes, and su
 
 ## License
 
-ZooperCart is open-source software licensed under the MIT License.
+ZooperCart is open-source software licensed under the MIT License created with 💖 by kartik saxena.
 
 ---
-
-Feel free to modify or adapt this README to fit the specific requirements of your project!
