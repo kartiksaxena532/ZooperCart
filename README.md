@@ -30,10 +30,11 @@ ZooperCart is a feature-rich e-commerce mobile application built using **React N
 - **E-Wallet**: Integrated into the app for managing user spending and adding cards.
 - **Responsive Design**: Optimized for various screen sizes.
 
-![After](https://github.com/user-attachments/assets/a99d44d7-5691-4a6e-bd01-5be3b3052152)
-![Before](https://github.com/user-attachments/assets/2785c84a-3539-4a1b-8ac7-24c1eaef871e)
-![Combined](https://github.com/user-attachments/assets/e78a6159-38b2-4404-831b-e06a5ec24799)
-
+<div style="display:flex;">
+  <img src="https://github.com/user-attachments/assets/a99d44d7-5691-4a6e-bd01-5be3b3052152" alt="after" style="width : 30vw"/>
+   <img src="https://github.com/user-attachments/assets/2785c84a-3539-4a1b-8ac7-24c1eaef871e" alt="after" style="width : 30vw" />
+   <img src="https://github.com/user-attachments/assets/e78a6159-38b2-4404-831b-e06a5ec24799" alt="after" style="width : 30vw" />
+</div>
 
 ### Animations
 To maintain performance, animations have been kept minimal and focused on improving user interaction.
