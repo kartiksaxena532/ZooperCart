@@ -9,7 +9,6 @@ import useCartStore from '../context/useCartStore';
 import useProductStore from "../context/useProductStore";
 
 
-
 const HugeListDouble = ({title,buttonText}) => {
   const [isCounterVisibleMap, setIsCounterVisibleMap] = useState({});
   const { products, loading, error, fetchProducts } = useProductStore();
@@ -23,6 +22,9 @@ const HugeListDouble = ({title,buttonText}) => {
     }));
   };
   
+  useEffect(() => {
+    fetchProducts();
+  }, [fetchProducts]);
 
   if (!loading) {
     <SafeAreaView className="flex justify-center items-center">
@@ -35,9 +37,6 @@ const HugeListDouble = ({title,buttonText}) => {
     return <View ><Text className="text-red-500 font-pbold">{error}</Text></View>
   }
 
-  useEffect(() => {
-    fetchProducts();
-  }, [fetchProducts]);
 
 
   const renderItem = ({ item: product, index}) => (

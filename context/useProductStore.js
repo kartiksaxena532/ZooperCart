@@ -13,7 +13,7 @@ const useProductStore = create((set) => ({
             const response = await axios.get("https://dummyjson.com/products");
             set({products:response.data.products,loading:false})
         } catch (error) {
-            set({error:"Oops its us not you !",loading:false})
+            set({error:"Opps You're Offline!",loading:false})
         }
     },
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { View, Image, Animated } from "react-native";
-import FormField from "./FormField";
+import { View, Image, Animated, TouchableOpacity, TextInput } from "react-native";
+import { useRouter } from "expo-router";
 import { images } from "../constants";
 
 const suggestions = [
@@ -14,8 +14,12 @@ const suggestions = [
 const Search = () => {
   const [placeholderIndex, setPlaceholderIndex] = useState(0);
   const [fadeAnim] = useState(new Animated.Value(1));
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isTyping, setIsTyping] = useState(false);  
+  const router = useRouter();
 
   useEffect(() => {
+    if (isTyping) return;
     const interval = setInterval(() => {
       // Fade out animation
       Animated.timing(fadeAnim, {
@@ -36,25 +40,36 @@ const Search = () => {
     }, 2000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isTyping]);
+
+  const handleSearch = () => {
+    if (searchQuery.trim()) {
+      router.push(`/search/${searchQuery}`);
+    }
+  };
+
+  const handleChangeText = (text) => {
+    setSearchQuery(text);
+    setIsTyping(text.length > 0);
+  };
 
   return (
-    <View className="flex flex-row items-center justify-around px-2 -mt-8">
-      <Animated.View >
-        <FormField 
-          label="Search"
+    <View className="flex flex-row items-center justify-around px-2 ">
+      <Animated.View style={{ opacity: fadeAnim, flex: 1 }}>
+        <TextInput
+          value={searchQuery}
+          onChangeText={handleChangeText}
           placeholder={`Search for ${suggestions[placeholderIndex]}`}
-          name="search"
-          type="text"
-          otherStyles="w-[82vw] mb-2 rounded-full"
-          style={{ opacity: fadeAnim, flex: 1 }}
+          className="w-[82vw] rounded-full border border-orange-300 px-4 py-2"
         />
       </Animated.View>
-      <Image
-        source={images.search}
-        className="w-[30px] h-[30px] mt-10"
-        resizeMode="contain"
-      />
+      <TouchableOpacity onPress={handleSearch}>
+        <Image
+          source={images.search}
+          className="w-[30px] h-[30px] mt-10"
+          resizeMode="contain"
+        />
+      </TouchableOpacity>
     </View>
   );
 };
