@@ -7,12 +7,7 @@ import { useEffect } from 'react';
 SplashScreen.preventAutoHideAsync();
 
 
-
-
-
 const RootLayout = () => {
-
-
   const [fontsLoaded, error] = useFonts({
     "Poppins-Black": require("../assets/fonts/Poppins-Black.ttf"),
     "Poppins-Bold": require("../assets/fonts/Poppins-Bold.ttf"),
@@ -23,7 +18,6 @@ const RootLayout = () => {
     "Poppins-Thin": require("../assets/fonts/Poppins-Thin.ttf"),
     "Poppins-ExtraBold": require("../assets/fonts/Poppins-ExtraBold.ttf"),
     "Poppins-SemiBold": require("../assets/fonts/Poppins-SemiBold.ttf"),
-
   })
 
 
@@ -51,6 +45,7 @@ const RootLayout = () => {
       <Stack.Screen name="product/[id]" options={{ headerShown: false }} />
       <Stack.Screen name="category/[name]" options={{ headerShown: false }} />
       <Stack.Screen name="(card)/addCard" options={{ headerShown: false }} />
+      <Stack.Screen name="search/[query]" options={{ headerShown: false }}/>
     </Stack>
   )
 }

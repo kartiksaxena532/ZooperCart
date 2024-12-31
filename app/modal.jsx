@@ -87,7 +87,7 @@ export default function Modal() {
           <View className="flex justify-center items-center mx-3 border-b-[1px]  border-gray-800">
             <View className="flex flex-row items-center justify-between w-full px-2 py-4 rounded-[12px]">
             <Image source={images.logo} className="w-10 h-10 rounded-full" /> 
-            <Text className="font-psemibold  text-white text-lg">Address</Text>
+            <Text className="font-psemibold  text-white text-lg">Settings</Text>
             <Image source={images.downArrow} className="w-6 h-6 rounded-full -rotate-90" />
             </View>
           </View>
@@ -95,7 +95,7 @@ export default function Modal() {
           <View className="flex justify-center items-center mx-3 border-b-[1px] my-2 border-gray-800">
             <View className="flex flex-row items-center justify-between w-full  px-2 py-4 rounded-[12px]">
             <Image source={images.logo} className="w-10 h-10 rounded-full" /> 
-            <Text className="font-psemibold  text-white text-lg ">Address</Text>
+            <Text className="font-psemibold  text-white text-lg ">Terms and Conditions</Text>
             <Image source={images.downArrow} className="w-6 h-6 rounded-full -rotate-90" />
             </View>
           </View>
@@ -103,7 +103,7 @@ export default function Modal() {
           <View className="flex justify-center items-center mx-3 mt-2 border-gray-800">
             <View className="flex flex-row items-center justify-between w-full  px-2 py-2 rounded-[12px]">
             <Image source={images.logo} className="w-10 h-10 rounded-full" /> 
-            <Text className="font-psemibold  text-white text-lg ">Address</Text>
+            <Text className="font-psemibold  text-white text-lg ">Referal Program</Text>
             <Image source={images.downArrow} className="w-6 h-6 rounded-full -rotate-90" />
             </View>
           </View>

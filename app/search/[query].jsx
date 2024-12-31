@@ -1,6 +1,9 @@
 import { useLocalSearchParams,Link } from "expo-router";
 import React, { useState, useEffect } from "react";
-import { View, Text, FlatList, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, FlatList, StyleSheet, TouchableOpacity,StatusBar,ScrollView ,Image} from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { images } from "../../constants";
+
 
 export default function SearchPage() {
   const { query } = useLocalSearchParams();
@@ -26,13 +29,19 @@ export default function SearchPage() {
       setLoading(false);
     }
   };
-
   if (loading) return <Text>Loading...</Text>;
   if (error) return <Text>{error}</Text>;
   if (!results.length) return <Text>No products found for "{query}"</Text>;
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView>
+      <StatusBar backgroundColor="#1e1e2d"/>
+      <TouchableOpacity className=" h-[6vh] items-start flex  bg-black-100">
+      <Link href="/home" className='h-10  w-10'>
+        <Image source={images.back} className="h-8 w-8" />
+      </Link>
+    </TouchableOpacity>
+      <View className="flex flex-col  bg-black-100 h-[100%] px-2 text-white">
       <Text style={styles.heading}>Results for "{query}"</Text>
       <FlatList
         data={results}
@@ -43,7 +52,8 @@ export default function SearchPage() {
           </TouchableOpacity>
         )}
       />
-    </View>
+      </View>
+    </SafeAreaView>
   );
 }
 
