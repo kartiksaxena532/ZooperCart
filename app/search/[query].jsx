@@ -48,7 +48,8 @@ export default function SearchPage() {
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <TouchableOpacity style={styles.item}>
-            <Link href={`/product/${item.id}`}>{item.title} -{item.price}</Link>
+            <Link href={`/product/${item.id}`}>{item.title}</Link>
+            <Text>${item.price}</Text>
           </TouchableOpacity>
         )}
       />
