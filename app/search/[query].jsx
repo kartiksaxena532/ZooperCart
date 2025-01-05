@@ -58,7 +58,7 @@ export default function SearchPage() {
             </View>
             <View className="flex align-center justify-center">
             <Link className="text-white text-md font-pregular" href={`/product/${item.id}`}>{item.title}</Link>
-            <Text className="text-gray-400 text-xs font-pregular">${item.price}</Text>
+            <Text className="text-gray-400 text-xs font-pregular">₹ {item.price}</Text>
             </View>
           </TouchableOpacity>
         )}

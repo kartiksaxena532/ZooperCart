@@ -43,7 +43,7 @@ const RootLayout = () => {
         }}
       />
       <Stack.Screen name="product/[id]" options={{ headerShown: false }} />
-      <Stack.Screen name="category/[name]" options={{ headerShown: false }} />
+      <Stack.Screen name="category/[slug]" options={{ headerShown: false }} />
       <Stack.Screen name="(card)/addCard" options={{ headerShown: false }} />
       <Stack.Screen name="search/[query]" options={{ headerShown: false }}/>
     </Stack>
