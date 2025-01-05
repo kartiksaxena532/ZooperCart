@@ -55,18 +55,19 @@ const Search = () => {
 
   return (
     <View className="flex flex-row items-center justify-around px-2 ">
-      <Animated.View style={{ opacity: fadeAnim, flex: 1 }}>
+      <View className="w-[90%] h-12 px-4 bg-black-100 rounded-md border-2 border-blue-800 focus:border-secondary items-center flex-row">
         <TextInput
           value={searchQuery}
           onChangeText={handleChangeText}
           placeholder={`Search for ${suggestions[placeholderIndex]}`}
-          className="w-[82vw] rounded-full border border-orange-300 px-4 py-2"
+          placeholderTextColor={'#6B7280'}
+         className="flex-1 text-white font-psemibold text-sm"
         />
-      </Animated.View>
+           </View>
       <TouchableOpacity onPress={handleSearch}>
         <Image
           source={images.search}
-          className="w-[30px] h-[30px] mt-10"
+          className="w-[30px] h-[30px]"
           resizeMode="contain"
         />
       </TouchableOpacity>

@@ -47,7 +47,7 @@ const Products = () => {
 
 
   return (
-    <ScrollView className="bg-black-100 h-full w-full pt-5 ">
+    <ScrollView className="bg-black-100 h-full w-full pt-8 ">
       <StatusBar backgroundColor="#ffffff"/>
       <View className="h-4 w-4 bg-red-600 absolute right-3 top-4 rounded-full items-center justify-center z-[99]">
         <Text className="text-white font-pbold text-[10px]">
