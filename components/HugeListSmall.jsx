@@ -39,8 +39,6 @@ const HugeListSmall = ({ title }) => {
 
         // Update the categories state with the fetched data
         setCategories(categoryData);
-
-        console.log("Fetched categories:", categoryData);
       } catch (error) {
         console.error("Error fetching categories:", error);
       } finally {
