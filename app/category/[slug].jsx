@@ -101,7 +101,7 @@ const Category = () => {
         data={category}
         keyExtractor={(item) => item.id.toString()}
         renderItem={renderItem}
-        contentContainerStyle={{ paddingBottom: 20 }}
+        contentContainerStyle={{ paddingBottom: 15 }}
         showsVerticalScrollIndicator={false}
       />
     </SafeAreaView>
