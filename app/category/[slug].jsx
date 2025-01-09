@@ -89,7 +89,7 @@ const Category = () => {
             {category[0]?.category || 'Category'}
           </Text>
           <Image 
-            source={{ uri: category[1]?.thumbnail || 'https://via.placeholder.com/200' }} 
+            source={{ uri: category[1]?.thumbnail || 'https://via.placeholder.com/300' }} 
             className="rounded-b-xl w-full -mt-7 h-[180px]"
             resizeMode='contain' 
           />
