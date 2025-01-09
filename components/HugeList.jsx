@@ -9,24 +9,21 @@ import useProductStore from "../context/useProductStore";
 import Loading from "./Loading";
 import Products from "../app/product/[id]";
 
-
-
 const HugeList = ({ title, buttonText }) => {
 
   const [isCounterVisibleMap, setIsCounterVisibleMap] = useState({});
   const { products, loading, error, fetchProducts } = useProductStore();
   const { addToCart, decreaseQuantity, increaseQuantity, removeFromCart, carts } = useCartStore();
 
-
   useEffect(() => {
     fetchProducts();
   }, [fetchProducts]);
 
 
-  if (!loading) {
-    <SafeAreaView className="flex justify-center items-center">
+  if (loading) {
+    <SafeAreaView className="bg-black-100 h-[22vh]">
       <ActivityIndicator size="large" color="#0000ff" />
-      <Text>Loading products...</Text>
+      <Text className="text-red-400 text-xl text-center ">Loading products...</Text>
     </SafeAreaView>
   }
 

@@ -4,6 +4,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useEffect, useState } from 'react';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
+import Loader from '../../components/Video/Loader';
+
 
 const Category = () => {
   const { slug } = useLocalSearchParams();
@@ -36,7 +38,7 @@ const Category = () => {
   if (loading) {
     return (
       <SafeAreaView className="bg-black-100 h-full w-full flex items-center justify-center">
-        <ActivityIndicator size="large" color="#FFD700" />
+        <Loader/>
       </SafeAreaView>
     );
   }

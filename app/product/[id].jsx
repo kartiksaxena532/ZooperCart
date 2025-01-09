@@ -66,9 +66,7 @@ const Products = () => {
         <View className="bg-yellow-300 rounded-full w-14 h-14 items-center justify-center absolute right-4 -bottom-5">
           <Image source={images.heart} className="w-[8vw] h-[4vh] " />
         </View>
-
       </View>
-
       <SafeAreaView className=" px-4">
 
         <Text className="text-xl text-white font-pregular text-left ">{product.title}</Text>

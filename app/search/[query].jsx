@@ -4,7 +4,7 @@ import { View, Text, FlatList, StyleSheet, TouchableOpacity,StatusBar,ScrollView
 import { SafeAreaView } from "react-native-safe-area-context";
 import { images } from "../../constants";
 import  Search from "../../components/Search";
-
+import Loader from "../../components/Video/Loader";
 
 export default function SearchPage() {
   const { query } = useLocalSearchParams();
@@ -30,7 +30,14 @@ export default function SearchPage() {
       setLoading(false);
     }
   };
-  if (loading) return <Text>Loading...</Text>;
+    if (loading) {
+      return (
+        <SafeAreaView className="bg-black-100 h-full w-full flex items-center justify-center">
+        <Loader/>
+        </SafeAreaView>
+      );
+    }
+  
   if (error) return <Text>{error}</Text>;
   if (!results.length) return <Text>No products found for "{query}"</Text>;
 
@@ -51,6 +58,7 @@ export default function SearchPage() {
       <FlatList
         data={results}
         keyExtractor={(item) => item.id.toString()}
+        showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
           <TouchableOpacity className="flex flex-row text-white my-2 py-2 rounded-2xl" >
             <View className="flex flex-row ">
