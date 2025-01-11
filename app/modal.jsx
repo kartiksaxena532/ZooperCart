@@ -12,7 +12,7 @@ export default function Modal() {
   return (
     <SafeAreaView>
    <StatusBar backgroundColor="#1e1e2d"/>
-      <ScrollView className="flex flex-col  bg-black-100 h-[100%] px-2 text-white">
+      <ScrollView className="flex flex-col bg-black-100 h-[100%] px-2 text-white">
         <ProfileNavbar />
         <View className="flex">
           <View className="flex mx-auto border-4 border-yellow-500 rounded-full w-[150px] h-[150px] items-center  overflow-hidden" sharedTransitionTag="sharedTag">
@@ -78,7 +78,7 @@ export default function Modal() {
           <View className="flex justify-center items-center mx-3 border-b-[1px] mb-2 border-gray-800">
             <View className="flex flex-row items-center justify-between w-full  px-2 py-4 rounded-[12px]">
             <Image source={images.logo} className="w-10 h-10 rounded-full" /> 
-            <Text className="font-psemibold  text-white text-lg ">Address</Text>
+            <Text className="font-psemibold text-left text-white text-lg ">Address</Text>
             <Image source={images.downArrow} className="w-6 h-6 rounded-full -rotate-90" />
             </View>
           </View>
@@ -87,7 +87,7 @@ export default function Modal() {
           <View className="flex justify-center items-center mx-3 border-b-[1px]  border-gray-800">
             <View className="flex flex-row items-center justify-between w-full px-2 py-4 rounded-[12px]">
             <Image source={images.logo} className="w-10 h-10 rounded-full" /> 
-            <Text className="font-psemibold  text-white text-lg">Settings</Text>
+            <Text className="font-psemibold text-left text-white text-lg">Settings</Text>
             <Image source={images.downArrow} className="w-6 h-6 rounded-full -rotate-90" />
             </View>
           </View>
@@ -95,7 +95,7 @@ export default function Modal() {
           <View className="flex justify-center items-center mx-3 border-b-[1px] my-2 border-gray-800">
             <View className="flex flex-row items-center justify-between w-full  px-2 py-4 rounded-[12px]">
             <Image source={images.logo} className="w-10 h-10 rounded-full" /> 
-            <Text className="font-psemibold  text-white text-lg ">Terms and Conditions</Text>
+            <Text className="font-psemibold text-left text-white text-lg ">Terms and Conditions</Text>
             <Image source={images.downArrow} className="w-6 h-6 rounded-full -rotate-90" />
             </View>
           </View>
@@ -103,7 +103,7 @@ export default function Modal() {
           <View className="flex justify-center items-center mx-3 mt-2 border-gray-800">
             <View className="flex flex-row items-center justify-between w-full  px-2 py-2 rounded-[12px]">
             <Image source={images.logo} className="w-10 h-10 rounded-full" /> 
-            <Text className="font-psemibold  text-white text-lg ">Referal Program</Text>
+            <Text className="font-psemibold text-left text-white text-lg ">Referal Program</Text>
             <Image source={images.downArrow} className="w-6 h-6 rounded-full -rotate-90" />
             </View>
           </View>
