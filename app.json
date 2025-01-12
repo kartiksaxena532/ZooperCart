@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "KartikApp",
-    "scheme": "KartikApp",
-    "slug": "KartikApp",
+    "name": "kartikapp",
+    "scheme": "kartik-app",
+    "slug": "kartikapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -17,7 +17,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "package": "com.deepak.opticals"
+      "bundleIdentifier": "com.zoopercart.app"
     },
     "android": {
       "adaptiveIcon": {
@@ -30,16 +30,15 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      
       "expo-router",
       "expo-video"
-  ],
+    ],
     "extra": {
       "router": {
         "origin": false
       },
       "eas": {
-        "projectId": "f73ed93f-10c4-40b1-b86f-341559eb3ebc"
+        "projectId": "bba1d6ff-59a5-49b1-b45d-7f46b6f80f62"
       }
     }
   }
