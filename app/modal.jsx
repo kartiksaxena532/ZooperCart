@@ -78,7 +78,7 @@ export default function Modal() {
           <View className="flex justify-center items-center mx-3 border-b-[1px] mb-2 border-gray-800">
             <View className="flex flex-row items-center justify-between w-full  px-2 py-4 rounded-[12px]">
             <Image source={images.logo} className="w-10 h-10 rounded-full" /> 
-            <Text className="font-psemibold text-left text-white text-lg ">Address</Text>
+            <Text className="font-psemibold text-left text-white text-xl ">Address</Text>
             <Image source={images.downArrow} className="w-6 h-6 rounded-full -rotate-90" />
             </View>
           </View>
