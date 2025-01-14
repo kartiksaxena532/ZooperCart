@@ -13,6 +13,7 @@ const Cart = () => {
   const totalCost = getTotalCost().toFixed(2);
   return (
     <>
+    <StatusBar style="light" />
       <View className="bg-blue-500 h-10 w-full"></View>
       <View className="bg-black-100 flex-1 font-pmedium">
         <View className="bg-blue-500 mb-4">
