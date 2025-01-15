@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, Button } from 'react-native'
 import { SplashScreen, Stack } from "expo-router"
 import { useFonts } from "expo-font"
 import { useEffect } from 'react';
+import { StripeProvider } from '@stripe/stripe-react-native';
 SplashScreen.preventAutoHideAsync();
 
 
@@ -30,8 +31,8 @@ const RootLayout = () => {
 
   return (
 
-    <Stack>
-
+   <StripeProvider publishableKey="pk_test_51QZWRSKBp1YPyoyvAmHLwMtFVJs1xVf00nPuEmRxxfBPoofLnhBlVChzMTnACWRQt6ToZs29r0US6A6WHDwqFYhX00HITUhQnU">
+     <Stack>
       <Stack.Screen name="index" options={{ headerShown: false }} />
       <Stack.Screen name="(auth)" options={{ headerShown: false }} />
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
@@ -47,6 +48,7 @@ const RootLayout = () => {
       <Stack.Screen name="(card)/addCard" options={{ headerShown: false }} />
       <Stack.Screen name="search/[query]" options={{ headerShown: false }}/>
     </Stack>
+   </StripeProvider>
   )
 }
 
