@@ -75,7 +75,7 @@ const Cart = () => {
         },
       );
     } else {
-      Alert.alert('Success', 'Your order is confirmed!');
+      Alert.alert('Success', 'Your order is on its way!');
     }
   };
 
