@@ -3,7 +3,38 @@
 ZooperCart is a feature-rich e-commerce mobile application built using **React Native** and **Expo**, styled with **NativeWind** (TailwindCSS). It provides a seamless shopping experience, offering features like cart management, product browsing, and order tracking, along with future enhancements like payment integration and real-time order tracking with Google Maps.
 
 ---
+```javascript
+import React, { useState } from 'react';
+import { FlatList, RefreshControl, Text } from 'react-native';
 
+const App = () => {
+    const [refreshing, setRefreshing] = useState(false);
+
+    const fetchData = () => {
+        // Fetch the data and update your state accordingly
+    };
+
+    const onRefresh = () => {
+        setRefreshing(true);
+        fetchData().then(() => {
+            setRefreshing(false);
+        });
+    };
+
+    return (
+        <FlatList
+            data={['Item 1', 'Item 2', 'Item 3']}
+            renderItem={({ item }) => <Text>{item}</Text>}
+            refreshControl={
+                <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+            }
+        />
+    );
+};
+
+export default App;
+
+```
 ## Table of Contents
 1. [Features](#features)
 2. [Screens](#screens)
